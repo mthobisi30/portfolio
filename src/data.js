@@ -60,7 +60,7 @@ export const PROJECTS = [
     description: "A comprehensive management system designed for manufacturing and operational efficiency.",
     github: "https://github.com/mthobisi30/ERP-system",
     live: "", // No public live link found for this internal tool
-    tech: ["C#", "ASP.NET Core", "SQL Server", "Entity Framework", "React"],
+    tech: ["Python", "Flask", "SQL Server", "Entity Framework", "React"],
     readme: "This ERP system serves as a central backbone for manufacturing operations. It integrates Inventory Management, Human Resources, and Production Planning into a single interface. Built with a robust .NET Core backend and SQL Server, it ensures data integrity and scalable business logic. Key features include real-time stock tracking, automated procurement orders, and role-based access control for different organizational departments."
   },
   {
