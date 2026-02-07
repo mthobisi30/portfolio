@@ -12,7 +12,7 @@ export const CV_DATA = {
       company: "Wesant Manufacturing / Vision Elevators",
       period: "Sep 2025 - Present",
       responsibilities: [
-        "Design, develop, and maintain internal and external web and mobile applications as the sole developer for the organisation.",
+        "Design, develop, and maintain internal and external web and mobile applications as the sole developer.",
         "Manage full software development lifecycle including requirements analysis and system architecture.",
         "Build responsive web applications using Next.js, React, and TypeScript.",
         "Develop cross-platform mobile applications using Flutter, Dart, and Kotlin.",
@@ -56,25 +56,31 @@ export const PROJECTS = [
   {
     id: "erp-system",
     title: "Enterprise Resource Planning (ERP)",
-    description: "A comprehensive management system designed for manufacturing efficiency.",
+    category: "Enterprise",
+    description: "A comprehensive management system designed for manufacturing and operational efficiency.",
     github: "https://github.com/mthobisi30/ERP-system",
-    tech: ["Next.js", "C#", "SQL Server", "Tailwind CSS"],
-    readme: "This ERP system centralizes inventory, human resources, and manufacturing workflows. It features real-time data visualization and automated reporting modules."
+    live: "", // No public live link found for this internal tool
+    tech: ["C#", "ASP.NET Core", "SQL Server", "Entity Framework", "React"],
+    readme: "This ERP system serves as a central backbone for manufacturing operations. It integrates Inventory Management, Human Resources, and Production Planning into a single interface. Built with a robust .NET Core backend and SQL Server, it ensures data integrity and scalable business logic. Key features include real-time stock tracking, automated procurement orders, and role-based access control for different organizational departments."
   },
   {
-    id: "booking-system",
-    title: "Internal Booking System",
-    description: "Full-stack resource booking application with real-time updates.",
-    github: "https://github.com/mthobisi30/InternalBookingSystem",
-    tech: ["React", "TypeScript", "Express.js", "PostgreSQL"],
-    readme: "Features real-time booking conflict detection, optimistic UI updates with TanStack Query, and a full TypeScript monorepo architecture using Drizzle ORM."
-  },
-  {
-    id: "insurance-system",
+    id: "unified-insurance",
     title: "Unified Insurance System",
-    description: "Operations control center for insurance teams.",
+    category: "Web App",
+    description: "Operations control center for insurance teams, centralizing document and task management.",
     github: "https://github.com/mthobisi30/Unified-Insurance-System",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "shadcn/ui"],
-    readme: "Streamlines operations by centralizing document management, task tracking with priority, and email archiving with full-text search."
+    live: "https://unified-insurance-system.vercel.app",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "shadcn/ui", "Prisma"],
+    readme: "A unified dashboard designed to streamline the daily workflows of insurance brokers. It features a multi-tenant architecture allowing different teams to manage policies, claims, and client documents securely. The system includes a full-text search engine for email archiving, a drag-and-drop task management board, and automated compliance reporting tools."
+  },
+  {
+    id: "internal-booking",
+    title: "Internal Booking System",
+    category: "Full Stack",
+    description: "Resource booking application with real-time conflict detection and calendar integration.",
+    github: "https://github.com/mthobisi30/InternalBookingSystem",
+    live: "https://internal-booking-system-henna.vercel.app",
+    tech: ["React", "TypeScript", "Express.js", "PostgreSQL", "Drizzle ORM"],
+    readme: "Designed to solve the challenge of shared resource management in busy offices. This application allows users to book meeting rooms and hot desks with real-time availability checking. It utilizes Optimistic UI updates via TanStack Query for an instant-response feel and handles complex recurring booking logic on the backend."
   }
 ];
