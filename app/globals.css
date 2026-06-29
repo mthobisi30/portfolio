@@ -1,0 +1,543 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+   Cobalt glass theme — deep navy canvas (with a fixed bg image), electric
+   cobalt accent, liquid-glass surfaces, bold Oxanium type.
+---------------------------------------------------------------------------- */
+@theme {
+  --color-bg: #04060f;
+  --color-surface: #0a1022;
+  --color-surface-alt: #070b18;
+  --color-raise: #111a30;
+  --color-ink: #eef2fb;
+  --color-muted: #99a5bf;
+  --color-faint: #5a657f;
+  --color-accent: #3d7bff;
+  --color-accent-strong: #6f9dff;
+  --color-gold: #38bdf8;
+  --color-gold-strong: #7dd3fc;
+  --color-border: #ffffff1f;
+  --color-border-strong: #ffffff38;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo,
+    monospace;
+  --font-heading: var(--font-oxanium), var(--font-geist-sans), ui-sans-serif,
+    system-ui, sans-serif;
+  --font-serif: var(--font-lora), Georgia, "Times New Roman", serif;
+
+  --radius-card: 16px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    color-scheme: dark;
+    background-color: var(--color-bg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: transparent;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv05", "cv08", "ss01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 36%, transparent);
+    color: #04060f;
+  }
+
+  :target {
+    scroll-margin-top: 6rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-ink);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  /* Custom dark scrollbar */
+  * {
+    scrollbar-color: var(--color-border-strong) transparent;
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .shell {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Accent text — used for the highlighted part of headings */
+  .accent {
+    color: var(--color-accent);
+  }
+
+  /* Signature lime -> gold gradient text (the reference's name treatment) */
+  .text-gradient {
+    background-image: linear-gradient(
+      115deg,
+      #ffffff,
+      var(--color-accent-strong) 58%,
+      var(--color-accent) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Fading hairline divider */
+  .divider-gradient {
+    height: 1px;
+    border: 0;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      var(--color-border-strong),
+      transparent
+    );
+  }
+
+  /* Eyebrow: mono section marker with an accent index */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 1.75rem;
+    height: 1px;
+    background-color: var(--color-accent);
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--color-muted);
+    background-color: var(--color-raise);
+    border: 1px solid var(--color-border);
+    border-radius: 7px;
+    padding: 0.28rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.55rem;
+    border-radius: 6px;
+    border: 1px solid var(--color-border-strong);
+    color: var(--color-muted);
+    background-color: color-mix(in srgb, var(--color-raise) 70%, transparent);
+  }
+
+  .badge-accent {
+    border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+    color: var(--color-accent);
+    background-color: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  }
+
+  /* Status pill — "Available for work" */
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+    background-color: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    padding: 0.32rem 0.7rem 0.32rem 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.75rem 1.2rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, background-color 0.15s ease,
+      border-color 0.15s ease, color 0.15s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-accent-strong);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--color-accent) 60%, transparent);
+  }
+
+  .btn-ghost {
+    background-color: color-mix(in srgb, var(--color-raise) 60%, transparent);
+    color: var(--color-ink);
+    border-color: var(--color-border-strong);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-1px);
+  }
+
+  .link-accent {
+    color: var(--color-accent);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .link-accent:hover {
+    color: var(--color-accent-strong);
+  }
+
+  /* Surfaces — dark panels. Elevation comes from a lighter fill + hairline
+     border + faint glow, not heavy drop shadows. */
+  /* Liquid glass surfaces — frosted, translucent, with a top specular edge.
+     backdrop-blur refracts the fixed cobalt background behind. */
+  .card,
+  .card-pop,
+  .glass {
+    background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.025)
+    );
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -20px 40px -30px rgba(61, 123, 255, 0.25),
+      0 26px 55px -30px rgba(0, 0, 0, 0.8);
+  }
+
+  .card-pop-hover {
+    transition: border-color 0.35s ease, box-shadow 0.35s ease,
+      transform 0.35s ease;
+  }
+
+  .card-pop-hover:hover {
+    border-color: color-mix(in srgb, var(--color-accent) 60%, transparent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26),
+      0 0 0 1px color-mix(in srgb, var(--color-accent) 22%, transparent),
+      0 32px 64px -28px color-mix(in srgb, var(--color-accent) 32%, transparent);
+  }
+
+  .rule {
+    height: 1px;
+    background-color: var(--color-border);
+    border: 0;
+  }
+
+  /* Hairline grid texture */
+  .grid-texture {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(
+      ellipse 70% 60% at 50% 0%,
+      #000 0%,
+      transparent 78%
+    );
+    mask-image: radial-gradient(
+      ellipse 70% 60% at 50% 0%,
+      #000 0%,
+      transparent 78%
+    );
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Scroll-reveal
+---------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.65, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (min-width: 1024px) {
+  .reveal[data-from="left"] {
+    transform: translate3d(-30px, 0, 0);
+  }
+  .reveal[data-from="right"] {
+    transform: translate3d(30px, 0, 0);
+  }
+  .reveal[data-from="left"][data-shown="true"],
+  .reveal[data-from="right"][data-shown="true"] {
+    transform: none;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  opacity: 0;
+  animation: riseIn 0.75s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+
+/* ----------------------------------------------------------------------------
+   Patterns + aurora glows (green / dark)
+---------------------------------------------------------------------------- */
+.pattern-dots {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.07) 1px,
+    transparent 1.5px
+  );
+  background-size: 18px 18px;
+}
+
+.pattern-grid {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+.pattern-diagonal {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(192, 146, 94, 0.06) 0,
+    rgba(192, 146, 94, 0.06) 1px,
+    transparent 1px,
+    transparent 11px
+  );
+}
+
+@keyframes auroraFloatA {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6%, 4%, 0) scale(1.12);
+  }
+}
+
+@keyframes auroraFloatB {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(-7%, -3%, 0) scale(0.95);
+  }
+}
+
+.aurora-a {
+  animation: auroraFloatA 26s ease-in-out infinite;
+}
+
+.aurora-b {
+  animation: auroraFloatB 32s ease-in-out infinite;
+}
+
+/* Soft accent glow utility */
+.glow-accent {
+  box-shadow: 0 0 80px -20px color-mix(in srgb, var(--color-accent) 45%, transparent);
+}
+
+/* Animated lime->gold gradient border ring (the "crafted" detail) */
+@property --ring-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes ringSpin {
+  to {
+    --ring-angle: 360deg;
+  }
+}
+
+.glow-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--ring-angle),
+    transparent 0 58%,
+    var(--color-accent) 76%,
+    var(--color-gold) 88%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: ringSpin 6s linear infinite;
+  pointer-events: none;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: inline-flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .rise {
+    opacity: 1;
+    animation: none;
+  }
+  .aurora-a,
+  .aurora-b,
+  .glow-ring::before,
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Fixed background image (responsive) + readability overlay.
+   The glass surfaces' backdrop-blur refracts this layer.
+---------------------------------------------------------------------------- */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background-image: url("/bg-smalscreen.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .site-bg {
+    background-image: url("/bg-widescreen.png");
+    background-attachment: fixed;
+  }
+}
+
+.site-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      120% 90% at 70% 0%,
+      rgba(61, 123, 255, 0.1),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(4, 6, 15, 0.72),
+      rgba(4, 6, 15, 0.84) 55%,
+      rgba(4, 6, 15, 0.92)
+    );
+}
