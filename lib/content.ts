@@ -14,8 +14,8 @@ export const site = {
   githubLabel: "github.com/mthobisi30",
   linkedin: "https://www.linkedin.com/in/mthobisi30",
   linkedinLabel: "linkedin.com/in/mthobisi30",
-  portfolio: "https://portfolio-gvr2.vercel.app",
-  portfolioLabel: "portfolio-gvr2.vercel.app",
+  portfolio: "https://portfolio.rephinasoftware.com",
+  portfolioLabel: "portfolio.rephinasoftware.com",
   cv: "/cv/Mthobisi-Nxumalo-CV.pdf",
   rephina: "https://www.rephina.co.za",
 };

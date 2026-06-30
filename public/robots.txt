@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-gvr2.vercel.app/sitemap.xml
+Sitemap: https://portfolio.rephinasoftware.com/sitemap.xml
