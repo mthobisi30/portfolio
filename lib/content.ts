@@ -40,6 +40,7 @@ export type Project = {
   slug: string;
   name: string;
   tagline: string;
+  logo?: string;
   role: string;
   roleBadges: string[];
   platforms: string[];
@@ -61,6 +62,7 @@ export const projects: Project[] = [
     slug: "mpia",
     name: "MPIA Services",
     tagline: "Industrial NDT Inspection Platform",
+    logo: "/logos/mpia.jpeg",
     images: [
       { src: "/projects/mpia-admin.png", alt: "MPIA admin console dashboard — jobs, clients, equipment, and inspection archives", label: "Admin Console" },
       { src: "/projects/mpia-client.png", alt: "MPIA client portal NDT dashboard with project archives and recent reports", label: "Client Portal" },
@@ -122,6 +124,7 @@ export const projects: Project[] = [
     slug: "elevatetech",
     name: "ElevateTech",
     tagline: "Manufacturing PIM, Supplier Portal & Commerce Platform",
+    logo: "/logos/elevatetech.png",
     images: [
       { src: "/projects/pim-1.png", alt: "ElevateTech PIM admin dashboard — parts, inventory, and sync overview", label: "PIM" },
       { src: "/projects/suppliers-1.png", alt: "ElevateTech supplier portal dashboard — RFQs, quotes, and orders", label: "Supplier Portal" },
@@ -178,6 +181,7 @@ export const projects: Project[] = [
     slug: "redhailer",
     name: "RedHailer",
     tagline: "Service & Product Marketplace Platform",
+    logo: "/logos/redhailer.png",
     images: [
       { src: "/projects/redhailer-2.png", alt: "RedHailer discover-services marketplace screen with featured listings", label: "Marketplace" },
       { src: "/projects/redhailer-1.png", alt: "RedHailer sign-in screen", label: "Sign In" },
@@ -224,6 +228,7 @@ export const projects: Project[] = [
     slug: "rephina-erp",
     name: "Rephina ERP",
     tagline: "Internal Business Operations Platform",
+    logo: "/logos/rephina-erp.png",
     images: [
       { src: "/projects/erp-1.png", alt: "Rephina ERP dashboard — projects, tasks, and finance overview", label: "Dashboard" },
     ],

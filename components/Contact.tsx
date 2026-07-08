@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border-t border-border py-20 sm:py-28"
+      className="relative overflow-hidden border-t border-border py-14 sm:py-28"
     >
       <RobotBackdrop src="/robot.jpg" side="right" />
       <div className="shell relative">

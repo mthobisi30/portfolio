@@ -6,7 +6,7 @@ import { FadeIn } from "./motion";
 // the portfolio into an agency homepage.
 export default function RephinaGateway() {
   return (
-    <section className="border-t border-border py-16 sm:py-20">
+    <section className="border-t border-border py-12 sm:py-20">
       <div className="shell">
         <FadeIn>
           <div className="card-pop relative overflow-hidden">

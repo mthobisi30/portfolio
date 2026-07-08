@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mthobisi Nxumalo — Curriculum Vitae</title>
+<style>
+  /* ------------------------------------------------------------------ *
+   * Harvard-style CV — single column, serif, black on white.
+   * Tuned for A4 print (headless Chrome) and readable on screen.
+   * ------------------------------------------------------------------ */
+  @page {
+    size: A4;
+    margin: 14mm 16mm;
+  }
+
+  :root {
+    --ink: #111111;
+    --muted: #333333;
+    --rule: #111111;
+    --faint: #555555;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 10.4pt;
+    line-height: 1.34;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Page-like sheet for on-screen viewing; neutralised for print. */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 24px auto;
+    padding: 14mm 16mm;
+    background: #ffffff;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  @media print {
+    html, body { background: #ffffff; }
+    .sheet { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ----------------------------- Header ----------------------------- */
+  header { text-align: center; }
+
+  h1 {
+    margin: 0;
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    margin: 3px 0 6px;
+    font-size: 11pt;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  .contact {
+    font-size: 9pt;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .contact .sep { padding: 0 6px; color: var(--faint); }
+  .contact a { border-bottom: 0.4px solid #999; }
+
+  /* ---------------------------- Sections ---------------------------- */
+  section { margin-top: 13px; }
+
+  h2 {
+    margin: 0 0 6px;
+    padding-bottom: 2px;
+    font-size: 10.5pt;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-bottom: 1.1px solid var(--rule);
+  }
+
+  .lead {
+    margin: 0;
+    text-align: justify;
+    color: var(--muted);
+  }
+
+  /* Entry: org/title left, dates/location right */
+  .entry { margin-bottom: 9px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .org { font-weight: 700; }
+  .where { font-style: italic; color: var(--muted); white-space: nowrap; }
+  .role { font-style: italic; color: var(--muted); }
+  .dates { color: var(--muted); white-space: nowrap; font-size: 9.6pt; }
+
+  .tech {
+    margin: 2px 0 0;
+    font-size: 9pt;
+    color: var(--faint);
+    letter-spacing: 0.01em;
+  }
+
+  ul {
+    margin: 4px 0 0;
+    padding-left: 16px;
+  }
+  li { margin: 1.5px 0; padding-left: 2px; text-align: justify; }
+  li::marker { font-size: 0.85em; }
+
+  .skills p { margin: 3px 0; }
+  .skills .k { font-weight: 700; }
+
+  .certs { margin: 4px 0 0; padding-left: 16px; }
+  .certs li { text-align: left; }
+
+  /* Avoid awkward breaks inside an entry when printing. */
+  .entry, .skills p { break-inside: avoid; }
+  h2 { break-after: avoid; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <h1>Mthobisi Nxumalo</h1>
+    <div class="subtitle">Full Stack Developer</div>
+    <div class="contact">
+      Durban, KwaZulu-Natal, South Africa
+      <span class="sep">|</span> 071 927 9462
+      <span class="sep">|</span> <a href="mailto:mthobisinx30@gmail.com">mthobisinx30@gmail.com</a>
+      <br />
+      <a href="https://portfolio.rephinasoftware.com">portfolio.rephinasoftware.com</a>
+      <span class="sep">|</span> <a href="https://github.com/mthobisi30">github.com/mthobisi30</a>
+      <span class="sep">|</span> <a href="https://www.linkedin.com/in/mthobisi30">linkedin.com/in/mthobisi30</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p class="lead">
+      Full Stack Developer with production-grade experience building end-to-end web, mobile, and
+      desktop systems across manufacturing, industrial inspection, e-commerce, and financial-services
+      domains. Owns the full software development lifecycle — requirements and architecture through
+      database design, development, containerised deployment, and long-term support. Proven in
+      delivering multi-surface platforms on a single shared database, both as an employed developer
+      and independently through Rephina Software.
+    </p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">North-West University</span>
+        <span class="where">Potchefstroom, South Africa</span>
+      </div>
+      <div class="row">
+        <span class="role">BSc Information Technology</span>
+        <span class="dates">2020 – 2023</span>
+      </div>
+      <ul>
+        <li>Relevant coursework: Computer Science, Software Engineering, Databases, Networks, and Systems Analysis.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">Apex Academy</span>
+        <span class="where">South Africa</span>
+      </div>
+      <div class="row">
+        <span class="role">Short-Term Insurance (NQF Level 4) — Insurance Principles, Risk Management, Compliance</span>
+        <span class="dates">2024</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">King Edward VII School</span>
+        <span class="where">Johannesburg, Gauteng</span>
+      </div>
+      <div class="row">
+        <span class="role">National Senior Certificate (Matric)</span>
+        <span class="dates">2015 – 2019</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Professional Experience</h2>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">Wesant Manufacturing / Vision Elevators</span>
+        <span class="where">Pinetown, KwaZulu-Natal</span>
+      </div>
+      <div class="row">
+        <span class="role">Full Stack Developer</span>
+        <span class="dates">Sep 2025 – Present</span>
+      </div>
+      <ul>
+        <li>Design, develop, and maintain all internal and external web and mobile applications, owning architecture, delivery, and the full software development lifecycle.</li>
+        <li>Build web applications with Next.js, React, and TypeScript; cross-platform mobile apps with Flutter / Dart; and native Android in Kotlin.</li>
+        <li>Serve as primary database administrator for PostgreSQL and Microsoft SQL Server — schema design, query optimisation, indexing, and automated backups.</li>
+        <li>Implement authentication and role-based access control (JWT / OAuth) across all systems for secure, compliant data access.</li>
+        <li>Deploy and operate production applications with Docker on self-hosted Coolify infrastructure, maintaining CI/CD pipelines, uptime, and monitoring.</li>
+        <li>Translate business requirements into technical specifications and shipped features.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">Rephina Software</span>
+        <span class="where">Durban, KwaZulu-Natal</span>
+      </div>
+      <div class="row">
+        <span class="role">Founder &amp; Full Stack Developer</span>
+        <span class="dates">2023 – Present</span>
+      </div>
+      <ul>
+        <li>Operate an independent software practice delivering custom web, mobile, and desktop applications, dashboards, APIs, and workflow automation end to end.</li>
+        <li>Own each engagement from architecture and development through deployment, hosting, and long-term support.</li>
+        <li>Delivered contract platforms including MPIA Services (industrial NDT inspection) and RedHailer, a service marketplace for Qwezy Digitals.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">Hamtern Financial Services</span>
+        <span class="where">Bryanston, Gauteng</span>
+      </div>
+      <div class="row">
+        <span class="role">Learner — IT &amp; Systems Support</span>
+        <span class="dates">Jan 2024 – Dec 2024</span>
+      </div>
+      <ul>
+        <li>Built end-to-end workflow automation with Microsoft Power Platform (Power Automate, Power Apps, Power BI), reducing manual administrative effort across departments.</li>
+        <li>Developed Python scripts for data extraction, transformation, and automated reporting.</li>
+        <li>Supported IT infrastructure rollouts, user training, and ITSM / enterprise ticketing processes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">MPIA Services — Industrial NDT Inspection Platform</span>
+        <span class="where">Rephina Software</span>
+      </div>
+      <p class="tech">Next.js 15 · TypeScript · Flutter · Tauri 2 · PostgreSQL · Prisma · NextAuth</p>
+      <ul>
+        <li>Architected and built a seven-surface operations platform — admin web and desktop, client portal (web, desktop, mobile), field mobile, and marketing site — over one central PostgreSQL database.</li>
+        <li>Engineered offline-first field capture to local SQLite with automatic sync on reconnection, plus Ed25519-signed Tauri desktop installers with auto-updates.</li>
+        <li>Implemented tenant-scoped client access, granular permissions, and audit logging across jobs, reports, invoices, and inspection records.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">ElevateTech — Manufacturing PIM, Supplier Portal &amp; Commerce</span>
+        <span class="where">Full Stack Developer</span>
+      </div>
+      <p class="tech">Next.js · React · React Native · TypeScript · PostgreSQL · Prisma · Docker · Coolify</p>
+      <ul>
+        <li>Delivered four connected surfaces — a Product Information Management system, supplier portal, customer store, and React Native app — over one product database.</li>
+        <li>Built versioned product data, bulk CSV import / export, change-history audit trails, role-based dashboards, and automated inventory sync.</li>
+        <li>Containerised services on self-hosted Coolify with zero-downtime releases and automated migrations.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">RedHailer — Service &amp; Product Marketplace</span>
+        <span class="where">Contract for Qwezy Digitals</span>
+      </div>
+      <p class="tech">Next.js · TypeScript · PostgreSQL · Prisma · NextAuth · PayStack · Pusher · Capacitor</p>
+      <ul>
+        <li>Built a full-stack marketplace with client / provider role switching, service listings, and a product catalogue with inventory tracking.</li>
+        <li>Integrated PayStack payments with server-side verification, Pusher real-time chat, and QR-code job acceptance / completion workflows.</li>
+        <li>Shipped native Android / iOS via Capacitor with OpenStreetMap geocoding and distance-based delivery pricing.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">Rephina ERP — Business Operations Platform</span>
+        <span class="where">Founder / Full Stack Developer</span>
+      </div>
+      <p class="tech">Python · Flask 3 · SQLAlchemy 2 · PostgreSQL · JWT · Alembic</p>
+      <ul>
+        <li>Built a 70+ table ERP spanning finance (ZAR + 15% VAT invoicing), CRM, projects, time tracking, HR, support, and reporting.</li>
+        <li>Secured the system end to end with JWT authentication, role-based access control, ORM-guarded queries, rate limiting, and audit logging.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Technical Skills</h2>
+    <p><span class="k">Languages:</span> TypeScript, JavaScript, Python, Dart, C#, Kotlin, C++, SQL</p>
+    <p><span class="k">Frontend &amp; Mobile:</span> Next.js, React, Flutter, React Native, Capacitor, Tailwind CSS, shadcn/ui, HTML5, CSS3</p>
+    <p><span class="k">Backend:</span> Node.js, Flask, ASP.NET Core, REST API design, MVC architecture</p>
+    <p><span class="k">Databases:</span> PostgreSQL, Microsoft SQL Server, Oracle, SQLite, Prisma ORM, SQLAlchemy — schema design, query optimisation, migrations</p>
+    <p><span class="k">DevOps &amp; Cloud:</span> Docker, Coolify, AWS, Microsoft Azure, GitHub Actions, CI/CD, Git</p>
+    <p><span class="k">Security:</span> Authentication, JWT, OAuth, RBAC, tenant isolation, cyber-security best practices</p>
+    <p><span class="k">Automation &amp; AI:</span> Power Automate, Power Apps, Power BI, UiPath, AI agents &amp; models, PyTorch</p>
+    <p><span class="k">Practices:</span> Full SDLC, requirements analysis, system architecture, technical documentation, code review, Agile / Scrum</p>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul class="certs">
+      <li>Diploma in Cyber Security — Alison (2024)</li>
+      <li>Responsive Web Design — freeCodeCamp (2023)</li>
+      <li>JavaScript Algorithms and Data Structures — freeCodeCamp (2023)</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>

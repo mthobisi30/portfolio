@@ -21,7 +21,7 @@ const tagClass =
 
 export default function TechStack() {
   return (
-    <section id="stack" className="border-t border-border py-20 sm:py-28">
+    <section id="stack" className="border-t border-border py-14 sm:py-28">
       <div className="shell">
         <SectionHeader
           index="04"

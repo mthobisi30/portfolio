@@ -7,10 +7,10 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-20 pb-24 sm:pt-24 sm:pb-28"
+      className="relative overflow-hidden pt-16 pb-16 sm:pt-24 sm:pb-28"
     >
       <div className="shell relative">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           {/* Left — identity */}
           <div className="max-w-2xl">
             <FadeIn immediate>
@@ -21,7 +21,7 @@ export default function Hero() {
             </FadeIn>
 
             <FadeIn immediate delay={0.08}>
-              <h1 className="mt-6 text-[2.9rem] font-bold leading-[1.01] tracking-tight sm:text-6xl lg:text-[4.6rem]">
+              <h1 className="mt-6 text-[2.4rem] font-bold leading-[1.03] tracking-tight sm:text-6xl lg:text-[4.6rem]">
                 Mthobisi
                 <br />
                 <span className="text-gradient">Nxumalo</span>

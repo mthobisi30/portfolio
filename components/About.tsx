@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden border-t border-border py-20 sm:py-28"
+      className="relative overflow-hidden border-t border-border py-14 sm:py-28"
     >
       <RobotBackdrop src="/robot-2.jpeg" side="left" />
       <div className="shell relative">

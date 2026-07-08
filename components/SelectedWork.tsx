@@ -1,6 +1,7 @@
 import { projects } from "@/lib/content";
 import { ArrowRight } from "./icons";
 import { PopCard, Stagger, StaggerItem } from "./motion";
+import ProjectLogo from "./ProjectLogo";
 import SectionHeader from "./SectionHeader";
 
 function byId(id: string) {
@@ -44,7 +45,7 @@ export default function SelectedWork() {
   const gwensula = byId("gwensula");
 
   return (
-    <section id="work" className="border-t border-border py-20 sm:py-28">
+    <section id="work" className="border-t border-border py-14 sm:py-28">
       <div className="shell">
         <SectionHeader
           index="01"
@@ -66,12 +67,15 @@ export default function SelectedWork() {
                   Software Developer
                 </span>
               </div>
-              <h3 className="mt-5 text-2xl font-bold tracking-tight sm:text-[1.8rem]">
-                {mpia.name}
-              </h3>
-              <p className="mt-1 text-sm font-medium text-muted">
-                {mpia.tagline}
-              </p>
+              <div className="mt-5 flex items-center gap-3.5">
+                <ProjectLogo src={mpia.logo} name={mpia.name} size={52} />
+                <div className="min-w-0">
+                  <h3 className="text-2xl font-bold tracking-tight sm:text-[1.8rem]">
+                    {mpia.name}
+                  </h3>
+                  <p className="text-sm font-medium text-muted">{mpia.tagline}</p>
+                </div>
+              </div>
               <p className="mt-4 max-w-xl text-[0.95rem] leading-relaxed text-muted">
                 {mpia.summary}
               </p>
@@ -88,12 +92,17 @@ export default function SelectedWork() {
           {/* Medium — ElevateTech */}
           <StaggerItem className="h-full md:col-span-2" from="down">
             <PopCard href="#case-elevatetech" className={cardClass}>
-              <h3 className="text-xl font-bold tracking-tight">
-                {elevate.name}
-              </h3>
-              <p className="mt-1 text-sm font-medium text-muted">
-                {elevate.tagline}
-              </p>
+              <div className="flex items-center gap-3">
+                <ProjectLogo src={elevate.logo} name={elevate.name} size={40} />
+                <div className="min-w-0">
+                  <h3 className="text-xl font-bold tracking-tight">
+                    {elevate.name}
+                  </h3>
+                  <p className="text-sm font-medium text-muted">
+                    {elevate.tagline}
+                  </p>
+                </div>
+              </div>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 PIM, supplier portal, store, and a React Native mobile app — one
                 product database.
@@ -108,12 +117,17 @@ export default function SelectedWork() {
           {/* Medium — RedHailer */}
           <StaggerItem className="h-full md:col-span-2" from="down">
             <PopCard href="#case-redhailer" className={cardClass}>
-              <h3 className="text-xl font-bold tracking-tight">
-                {redhailer.name}
-              </h3>
-              <p className="mt-1 text-sm font-medium text-muted">
-                {redhailer.tagline}
-              </p>
+              <div className="flex items-center gap-3">
+                <ProjectLogo src={redhailer.logo} name={redhailer.name} size={40} />
+                <div className="min-w-0">
+                  <h3 className="text-xl font-bold tracking-tight">
+                    {redhailer.name}
+                  </h3>
+                  <p className="text-sm font-medium text-muted">
+                    {redhailer.tagline}
+                  </p>
+                </div>
+              </div>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 Marketplace with QR job hand-off, PayStack payments, and Pusher
                 real-time chat.
@@ -129,8 +143,13 @@ export default function SelectedWork() {
           <StaggerItem className="h-full md:col-span-3">
             <PopCard href="#case-rephina-erp" className={cardClass}>
               <div className="flex items-center justify-between gap-3">
-                <h3 className="text-xl font-bold tracking-tight">{erp.name}</h3>
-                <span className="tag">Flask · Python</span>
+                <div className="flex min-w-0 items-center gap-3">
+                  <ProjectLogo src={erp.logo} name={erp.name} size={40} />
+                  <h3 className="truncate text-xl font-bold tracking-tight">
+                    {erp.name}
+                  </h3>
+                </div>
+                <span className="tag shrink-0">Flask · Python</span>
               </div>
               <p className="mt-1 text-sm font-medium text-muted">
                 {erp.tagline}

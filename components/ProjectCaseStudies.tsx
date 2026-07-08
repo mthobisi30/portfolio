@@ -2,6 +2,7 @@ import { projects, type Project } from "@/lib/content";
 import { ArrowUpRight } from "./icons";
 import { FadeIn } from "./motion";
 import ProjectGallery from "./ProjectGallery";
+import ProjectLogo from "./ProjectLogo";
 import ProjectPreview from "./ProjectPreview";
 import SectionHeader from "./SectionHeader";
 
@@ -55,9 +56,12 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
                 {project.tagline}
               </span>
             </div>
-            <h3 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-              {project.name}
-            </h3>
+            <div className="mt-3 flex items-center gap-3.5">
+              <ProjectLogo src={project.logo} name={project.name} size={46} />
+              <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                {project.name}
+              </h3>
+            </div>
           </div>
           <div className="flex flex-wrap gap-1.5 sm:justify-end">
             {project.roleBadges.map((b) => (
@@ -185,7 +189,7 @@ export default function ProjectCaseStudies() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden border-t border-border py-20 sm:py-28"
+      className="relative overflow-hidden border-t border-border py-14 sm:py-28"
     >
       <div className="shell">
         <SectionHeader

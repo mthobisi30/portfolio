@@ -5,7 +5,7 @@ import RobotBackdrop from "./RobotBackdrop";
 // "What I Bring" — software-development competencies as liquid-glass cells.
 export default function Strengths() {
   return (
-    <section className="relative overflow-hidden border-t border-border py-20 sm:py-24">
+    <section className="relative overflow-hidden border-t border-border py-14 sm:py-24">
       <RobotBackdrop src="/robot-3.jpeg" side="right" />
       <div className="shell relative">
         <FadeIn className="max-w-2xl">

@@ -4,7 +4,7 @@ import SectionHeader from "./SectionHeader";
 
 export default function Experience() {
   return (
-    <section id="experience" className="border-t border-border py-20 sm:py-28">
+    <section id="experience" className="border-t border-border py-14 sm:py-28">
       <div className="shell">
         <SectionHeader
           index="03"
