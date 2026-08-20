@@ -22,9 +22,9 @@ const lora = Lora({
 });
 
 const title =
-  "Mthobisi Nxumalo | Full Stack Developer — Web, Mobile, Desktop & Business Systems";
+  "Mthobisi Nxumalo | Software Engineer & Full Stack Developer";
 const description =
-  "Full Stack Developer based in Durban, South Africa, building multi-platform systems for industrial inspection, manufacturing, marketplaces, ERPs, and internal business workflows.";
+  "Durban-based Software Engineer and Full Stack Developer designing, building, deploying, and supporting production web, mobile, and desktop systems.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.portfolio),
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0c",
+  themeColor: "#0b0c0e",
   width: "device-width",
   initialScale: 1,
 };
@@ -79,7 +79,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: site.name,
-  jobTitle: "Full Stack Developer",
+  jobTitle: "Software Engineer and Full Stack Developer",
   email: `mailto:${site.email}`,
   telephone: `+27${site.phoneHref.replace(/^\+27/, "")}`,
   url: site.portfolio,
@@ -100,7 +100,9 @@ const personJsonLd = {
     "Tauri",
     "Python",
     "Flask",
+    "ASP.NET Core",
     "Docker",
+    "CI/CD",
     "Full Stack Development",
   ],
 };

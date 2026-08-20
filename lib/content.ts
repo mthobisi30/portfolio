@@ -29,11 +29,11 @@ export const nav = [
 ];
 
 export const hero = {
-  headline: "Building practical web, mobile, and desktop systems for real business workflows.",
+  headline: "I build the system behind the interface.",
   support:
-    "I work across the full SDLC — from requirements and architecture to database design, application development, deployment, and ongoing support.",
+    "Production software across web, mobile, and desktop — from the first schema and API contract to the interface, deployment, and support.",
   detail:
-    "Based in Durban, South Africa, and open to opportunities everywhere.",
+    "Full Stack Developer based in Durban, South Africa. Open to thoughtful teams and ambitious product work.",
 };
 
 export type Project = {
@@ -319,12 +319,10 @@ export const experience: Experience[] = [
     location: "Pinetown, KwaZulu-Natal",
     current: true,
     points: [
-      "Design, develop, and maintain every internal and external web and mobile application, owning architecture, delivery, and the full SDLC.",
-      "Build web apps with Next.js, React, and TypeScript; mobile apps with Flutter / Dart and native Android in Kotlin.",
-      "Act as primary DBA for PostgreSQL and Microsoft SQL Server — schema design, query optimisation, indexing, and automated backups.",
-      "Implement authentication and RBAC (JWT / OAuth) across all systems.",
-      "Deploy and run production apps with Docker on self-hosted Coolify; maintain CI/CD, uptime, and monitoring.",
-      "Translate business requirements into technical specifications and shipped features.",
+      "Own internal and customer-facing applications from business requirements and architecture through release and production support.",
+      "Build production web systems with Next.js, React, and TypeScript, alongside Flutter / Dart and native Android / Kotlin solutions.",
+      "Administer PostgreSQL and Microsoft SQL Server: schema design, migrations, indexing, query optimisation, data integrity, and backups.",
+      "Operate containerised applications on self-hosted Coolify infrastructure, maintaining CI/CD, releases, uptime, and monitoring.",
     ],
   },
   {
@@ -332,9 +330,9 @@ export const experience: Experience[] = [
     role: "Founder · Full Stack Developer",
     period: "Ongoing",
     points: [
-      "Operate a one-person software practice delivering custom web apps, mobile apps, dashboards, APIs, workflow tools, and automation.",
-      "Handle the work end to end: architecture, build, deployment, hosting, and support.",
-      "Client engagements range from industrial inspection platforms to marketplaces and business websites.",
+      "Deliver custom web, mobile, and desktop applications, dashboards, APIs, and workflow automation for commercial clients.",
+      "Lead discovery, architecture, implementation, deployment, and ongoing technical support.",
+      "Delivered MPIA Services, a multi-surface industrial inspection platform spanning administrative, client, and field workflows.",
     ],
   },
   {
@@ -371,36 +369,36 @@ export const experience: Experience[] = [
 
 export const strengths = [
   {
-    title: "Frontend",
-    body: "Responsive web UIs in Next.js, React, and TypeScript, plus cross-platform mobile in Flutter and React Native.",
+    title: "Product surfaces",
+    body: "Responsive web interfaces in Next.js and React; field and customer mobile apps in Flutter and React Native; desktop delivery with Tauri.",
   },
   {
-    title: "Backend",
-    body: "APIs, server logic, and integrations across Node.js, Python / Flask, and C# / .NET, designed around REST.",
+    title: "Application core",
+    body: "REST APIs, server logic, integrations, and background workflows across Node.js, Python / Flask, and ASP.NET Core.",
   },
   {
-    title: "Database administration",
-    body: "Schema design, indexing, query optimisation, and migrations on PostgreSQL, SQL Server, and Oracle.",
+    title: "Data architecture",
+    body: "Shared data models, migrations, indexing, query optimisation, and integrity across PostgreSQL, SQL Server, Oracle, and SQLite.",
   },
   {
-    title: "Security",
-    body: "Authentication, RBAC, tenant isolation, and JWT / OAuth applied with cyber-security best practices.",
+    title: "Trust boundaries",
+    body: "Authentication, RBAC, tenant isolation, audit logging, and JWT / OAuth designed into the system rather than added at the end.",
   },
   {
-    title: "DevOps",
-    body: "Docker on self-hosted Coolify and AWS, CI/CD pipelines, zero-downtime releases, backups, and monitoring.",
+    title: "Production operations",
+    body: "Docker, self-hosted Coolify, GitHub Actions, CI/CD, backups, monitoring, and hands-on support after launch.",
   },
   {
-    title: "Automation",
-    body: "Workflow automation and integrations — Power Platform, scripted pipelines, and AI agents / models where they fit.",
+    title: "Offline workflows",
+    body: "Local SQLite capture, reconnect-safe synchronisation, signed desktop installers, and automatic updates for work beyond the browser.",
   },
   {
-    title: "QA & testing",
-    body: "API testing with Postman and Swagger, code review, and automated checks to keep systems correct.",
+    title: "Delivery discipline",
+    body: "Requirements analysis, technical documentation, API testing, code review, and release workflows that keep delivery understandable.",
   },
   {
-    title: "Maintenance",
-    body: "Long-term ownership of live systems: hosting, support, fixes, and steady iteration after launch.",
+    title: "Full SDLC ownership",
+    body: "A single line of responsibility from the first conversation and architecture decision to deployment, support, and iteration.",
   },
 ];
 
@@ -476,15 +474,8 @@ export const techStack: { group: string; items: string[] }[] = [
     ],
   },
   {
-    group: "Automation & AI",
-    items: [
-      "Power Automate",
-      "Power Apps",
-      "Power BI",
-      "UiPath",
-      "AI agents & models",
-      "PyTorch",
-    ],
+    group: "Workflow Automation",
+    items: ["Power Automate", "Power Apps", "Power BI", "Python scripting"],
   },
   {
     group: "Testing & QA",
@@ -505,17 +496,17 @@ export const techStack: { group: string; items: string[] }[] = [
 ];
 
 export const about = {
-  lead: "Mthobisi Nxumalo is a Full Stack Developer based in Durban, South Africa, building custom software across web, mobile, and desktop.",
+  lead: "I am a software engineer who likes owning the hard middle of a product: where interfaces, data, permissions, infrastructure, and real-world operations meet.",
   body: [
-    "His work spans the full stack and the full lifecycle — interfaces, APIs, databases, authentication, deployment, and the maintenance that keeps systems running. He's delivered industrial inspection platforms, manufacturing and supplier systems, marketplaces, ERPs, internal dashboards, and workflow automation.",
-    "That work has come through full-time employment, his own clients via Rephina Software, and contract engagements for other teams — going from a first conversation to a deployed, monitored production system: designing the database, building the surfaces on top of it, wiring access control, and keeping it running.",
+    "My work has moved through manufacturing, industrial inspection, e-commerce, and financial services. I have delivered connected systems across browser, mobile, and desktop—not isolated screens—with shared data models and clear operational workflows underneath.",
+    "In full-time roles and through Rephina Software, I take products from requirements and architecture through database design, implementation, deployment, and production support. I care about software that remains useful after launch: secure, traceable, maintainable, and grounded in the people who use it.",
   ],
   facts: [
     { k: "Based in", v: "Durban, South Africa" },
     { k: "Role", v: "Full Stack Developer" },
-    { k: "Focus", v: "Custom Software Solutions" },
+    { k: "Focus", v: "Production Business Systems" },
     { k: "Delivery", v: "Web · Mobile · Desktop" },
-    { k: "Availability", v: "Open to all opportunities" },
+    { k: "Availability", v: "Open to strong opportunities" },
   ],
 };
 

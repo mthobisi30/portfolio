@@ -3,8 +3,7 @@ import { nav, site } from "@/lib/content";
 export default function Footer() {
   return (
     <footer className="border-t border-border">
-      {/* Extra bottom padding on phones so content clears the floating dock. */}
-      <div className="shell pt-12 pb-32 md:py-12">
+      <div className="shell py-12">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5">
@@ -16,8 +15,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              Full Stack Developer building practical web, mobile, and desktop
-              systems for business workflows. Based in Durban, South Africa.
+              Software Engineer and Full Stack Developer building production
+              systems across web, mobile, desktop, data, and infrastructure.
             </p>
           </div>
 
