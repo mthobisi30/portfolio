@@ -37,15 +37,7 @@ export default function ProjectGallery({
   return (
     <div>
       {/* Primary framed screenshot */}
-      <figure className="overflow-hidden rounded-[14px] border border-border bg-surface shadow-[0_10px_30px_-18px_rgba(30,30,30,0.35)]">
-        <div className="flex items-center gap-1.5 border-b border-border bg-surface-alt/60 px-3 py-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-border-strong" />
-          <span className="h-2.5 w-2.5 rounded-full bg-border-strong" />
-          <span className="h-2.5 w-2.5 rounded-full bg-border-strong" />
-          <span className="ml-auto rounded bg-bg px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-muted">
-            {shot.label}
-          </span>
-        </div>
+      <figure className="liquid-glass overflow-hidden rounded-[1.5rem] p-2">
         <button
           type="button"
           onClick={() => setOpen(true)}
@@ -70,9 +62,6 @@ export default function ProjectGallery({
               />
             </motion.span>
           </AnimatePresence>
-          <span className="pointer-events-none absolute bottom-2 right-2 rounded-md bg-ink/70 px-2 py-1 font-mono text-[9px] uppercase tracking-wider text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-            Click to enlarge
-          </span>
         </button>
       </figure>
 

@@ -1,15 +1,15 @@
 import { rephina, site } from "@/lib/content";
-import { ArrowUpRight, Mail } from "./icons";
+import { ArrowUpRight } from "./icons";
 import { FadeIn } from "./motion";
 
 // Compact gateway — clarifies the personal-vs-agency split without turning
 // the portfolio into an agency homepage.
 export default function RephinaGateway() {
   return (
-    <section className="border-t border-border py-12 sm:py-20">
+    <section className="section-space pt-0">
       <div className="shell">
         <FadeIn>
-          <div className="card-pop relative overflow-hidden">
+          <div className="rephina-panel liquid-glass relative overflow-hidden rounded-[2.5rem]">
             <div className="relative grid gap-8 p-7 sm:p-10 lg:grid-cols-[1.4fr_1fr] lg:items-center">
               <div>
                 <span className="eyebrow">Rephina Software</span>
@@ -19,13 +19,7 @@ export default function RephinaGateway() {
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
                   {rephina.blurb}
                 </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {rephina.offerings.map((o) => (
-                    <span key={o} className="tag">
-                      {o}
-                    </span>
-                  ))}
-                </div>
+                <p className="mt-6 text-sm leading-7 text-faint">{rephina.offerings.join(" · ")}</p>
               </div>
 
               <div className="flex flex-col gap-3 lg:border-l lg:border-border lg:pl-10">
@@ -40,16 +34,9 @@ export default function RephinaGateway() {
                 </a>
                 <a
                   href={`mailto:${site.email}?subject=Project%20enquiry`}
-                  className="btn btn-ghost w-full"
+                  className="text-link justify-center py-3"
                 >
                   Discuss a Project
-                </a>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="btn btn-ghost w-full"
-                >
-                  <Mail size={15} />
-                  Email Me
                 </a>
               </div>
             </div>

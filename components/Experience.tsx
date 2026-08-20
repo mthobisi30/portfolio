@@ -1,62 +1,62 @@
 import { experience } from "@/lib/content";
-import { Stagger, StaggerItem } from "./motion";
-import SectionHeader from "./SectionHeader";
+import { ArrowRight } from "./icons";
+import { FadeIn, Stagger, StaggerItem } from "./motion";
 
 export default function Experience() {
+  const featured = experience.slice(0, 3);
+
   return (
-    <section id="experience" className="border-t border-border py-14 sm:py-28">
+    <section id="experience" className="section-space">
       <div className="shell">
-        <SectionHeader
-          index="03"
-          eyebrow="Experience"
-          title="Responsibility has grown with every role."
-          intro="Today I own a manufacturer's application estate while continuing selected founder-led work through Rephina Software."
-        />
+        <FadeIn>
+          <div className="experience-heading grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="eyebrow">Experience</p>
+              <h2 className="mt-5 text-4xl sm:text-6xl">Responsibility, carried forward.</h2>
+            </div>
+            <p className="max-w-xl text-sm leading-7 text-muted lg:justify-self-end">
+              Full-stack ownership in manufacturing, paired with founder-led delivery of industrial systems through Rephina Software.
+            </p>
+          </div>
+        </FadeIn>
 
-        <Stagger gap={0.07} className="mt-12 border-t border-border">
-          {experience.map((job, index) => (
-            <StaggerItem key={`${job.company}-${job.role}`}>
-              <article className="experience-record grid gap-5 border-b border-border py-8 lg:grid-cols-[3.5rem_13rem_1fr] lg:gap-8">
-                <span className="font-mono text-xs text-accent">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <div>
-                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">
-                    {job.period}
-                  </p>
-                  {job.current ? (
-                    <span className="mt-3 inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-accent">
-                      <span className="h-1.5 w-1.5 bg-accent" />
-                      Current
-                    </span>
-                  ) : null}
-                </div>
-
-                <div className="grid gap-5 xl:grid-cols-[15rem_1fr] xl:gap-10">
-                  <header>
-                    <h3 className="text-xl font-bold tracking-tight">
-                      {job.company}
-                    </h3>
-                    <p className="mt-1 text-sm font-medium text-accent">
-                      {job.role}
-                    </p>
-                    {job.location ? (
-                      <p className="mt-2 text-xs text-muted">{job.location}</p>
+        <Stagger gap={0.07} className="experience-bento mt-14 grid gap-4 lg:grid-cols-12">
+          {featured.map((job, index) => (
+            <StaggerItem
+              key={`${job.company}-${job.role}`}
+              className={index === 0 ? "experience-lead lg:col-span-7 lg:row-span-2" : "lg:col-span-5"}
+            >
+              <article className="experience-cell liquid-glass h-full p-6 sm:p-8">
+                <header>
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <p className="detail-label">{job.period}</p>
+                    {job.current ? (
+                      <span className="current-role">
+                        <span aria-hidden /> Current role
+                      </span>
                     ) : null}
-                  </header>
-                  <ul className="grid gap-3 sm:grid-cols-2 sm:gap-x-8">
-                    {job.points.map((point) => (
-                      <li
-                        key={point}
-                        className="flex gap-3 text-sm leading-relaxed text-muted"
-                      >
-                        <span className="mt-[0.48rem] h-px w-3 shrink-0 bg-accent" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  </div>
+                  <h3 className={`mt-6 ${index === 0 ? "text-3xl sm:text-4xl" : "text-2xl"}`}>
+                    {job.company}
+                  </h3>
+                  <p className="mt-2 text-sm font-medium text-accent-strong">{job.role}</p>
+                  {job.location ? <p className="mt-2 text-xs text-faint">{job.location}</p> : null}
+                </header>
+
+                <ul className={`mt-7 grid gap-4 ${index === 0 ? "sm:grid-cols-2 sm:gap-x-8" : ""}`}>
+                  {job.points.map((point) => (
+                    <li key={point} className="flex gap-3 text-sm leading-6 text-muted">
+                      <span className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-accent" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {index === featured.length - 1 ? (
+                  <a href="/cv/Mthobisi-Nxumalo-CV.pdf" download className="text-link mt-7 inline-flex">
+                    Earlier roles in the full CV <ArrowRight size={14} />
+                  </a>
+                ) : null}
               </article>
             </StaggerItem>
           ))}

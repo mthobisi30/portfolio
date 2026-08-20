@@ -1,28 +1,33 @@
-"use client";
-
-import { motion, useReducedMotion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
-
-const EASE = [0.22, 0.61, 0.36, 1] as const;
+import type { CSSProperties, ReactNode } from "react";
 
 type Dir = "up" | "down" | "left" | "right" | "none";
 
-function offset(dir: Dir, d: number) {
-  switch (dir) {
-    case "left":
-      return { x: -d, y: 0 };
-    case "right":
-      return { x: d, y: 0 };
-    case "up":
-      return { x: 0, y: d };
-    case "down":
-      return { x: 0, y: -d };
-    default:
-      return { x: 0, y: 0 };
-  }
+type MotionStyle = CSSProperties & {
+  "--motion-delay"?: string;
+  "--motion-x"?: string;
+  "--motion-y"?: string;
+  "--stagger-gap"?: string;
+  "--card-lift"?: string;
+};
+
+function revealStyle(from: Dir, distance: number, delay: number): MotionStyle {
+  const offset = `${distance}px`;
+  const axis = {
+    up: { x: "0px", y: offset },
+    down: { x: "0px", y: `-${offset}` },
+    left: { x: `-${offset}`, y: "0px" },
+    right: { x: offset, y: "0px" },
+    none: { x: "0px", y: "0px" },
+  }[from];
+
+  return {
+    "--motion-delay": `${delay}s`,
+    "--motion-x": axis.x,
+    "--motion-y": axis.y,
+  };
 }
 
-/** Reveals on scroll into view (once). */
+/** CSS-first entrance animation with scroll-timeline progressive enhancement. */
 export function FadeIn({
   children,
   delay = 0,
@@ -38,28 +43,16 @@ export function FadeIn({
   immediate?: boolean;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
-  const off = reduce ? { x: 0, y: 0 } : offset(from, distance);
-  const trigger = immediate
-    ? { animate: { opacity: 1, x: 0, y: 0 } }
-    : ({
-        whileInView: { opacity: 1, x: 0, y: 0 },
-        viewport: { once: true, margin: "-10% 0px -10% 0px" },
-      } as const);
-
   return (
-    <motion.div
-      initial={{ opacity: 0, ...off }}
-      {...trigger}
-      transition={{ duration: 0.65, ease: EASE, delay }}
-      className={className}
+    <div
+      className={`${immediate ? "motion-immediate" : "motion-on-view"}${className ? ` ${className}` : ""}`}
+      style={revealStyle(from, distance, delay)}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
-/** Container that staggers <StaggerItem> children in as it scrolls into view. */
 export function Stagger({
   children,
   className,
@@ -71,23 +64,14 @@ export function Stagger({
   gap?: number;
   immediate?: boolean;
 }) {
-  const reduce = useReducedMotion();
-  const container: Variants = {
-    hidden: {},
-    show: { transition: { staggerChildren: reduce ? 0 : gap } },
-  };
-  const trigger = immediate
-    ? ({ initial: "hidden", animate: "show" } as const)
-    : ({
-        initial: "hidden",
-        whileInView: "show",
-        viewport: { once: true, margin: "-12% 0px" },
-      } as const);
-
+  const style = { "--stagger-gap": `${gap}s` } as MotionStyle;
   return (
-    <motion.div variants={container} {...trigger} className={className}>
+    <div
+      className={`motion-stagger${immediate ? " motion-stagger-immediate" : ""}${className ? ` ${className}` : ""}`}
+      style={style}
+    >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -102,25 +86,17 @@ export function StaggerItem({
   from?: Dir;
   distance?: number;
 }) {
-  const reduce = useReducedMotion();
-  const off = reduce ? { x: 0, y: 0 } : offset(from, distance);
-  const item: Variants = {
-    hidden: { opacity: 0, ...off },
-    show: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: { duration: 0.6, ease: EASE },
-    },
-  };
   return (
-    <motion.div variants={item} className={className}>
+    <div
+      className={`motion-stagger-item${className ? ` ${className}` : ""}`}
+      style={revealStyle(from, distance, 0)}
+    >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
-/** Glass card that lifts on hover. Pass href to render an anchor. */
+/** Glass card lift handled entirely in CSS. */
 export function PopCard({
   children,
   className,
@@ -132,25 +108,9 @@ export function PopCard({
   href?: string;
   lift?: number;
 }) {
-  const reduce = useReducedMotion();
-  const whileHover = reduce ? undefined : { y: lift };
-  const transition = { type: "spring" as const, stiffness: 280, damping: 24 };
-
+  const style = { "--card-lift": `${lift}px` } as MotionStyle;
   if (href) {
-    return (
-      <motion.a
-        href={href}
-        whileHover={whileHover}
-        transition={transition}
-        className={className}
-      >
-        {children}
-      </motion.a>
-    );
+    return <a href={href} style={style} className={`motion-pop ${className ?? ""}`}>{children}</a>;
   }
-  return (
-    <motion.div whileHover={whileHover} transition={transition} className={className}>
-      {children}
-    </motion.div>
-  );
+  return <div style={style} className={`motion-pop ${className ?? ""}`}>{children}</div>;
 }

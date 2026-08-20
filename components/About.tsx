@@ -1,24 +1,28 @@
 import { about, site } from "@/lib/content";
+import Image from "next/image";
 import { FadeIn } from "./motion";
-import SectionHeader from "./SectionHeader";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden border-t border-border py-14 sm:py-28"
+      className="relative overflow-hidden section-space"
     >
       <div className="shell relative">
-        <SectionHeader
-          index="05"
-          eyebrow="Working philosophy"
-          title="Built close to the real problem."
-        />
-
-        <div className="mt-12 grid items-start gap-6 lg:grid-cols-[1.5fr_1fr] lg:gap-8">
+        <div className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <FadeIn from="left">
-            <div className="about-statement h-full border-l-4 border-accent py-2 pl-6 sm:pl-9">
-              <p className="font-serif text-2xl leading-relaxed tracking-tight text-ink sm:text-3xl">
+            <figure className="liquid-glass relative aspect-[4/5] overflow-hidden rounded-[2.5rem] p-2">
+              <div className="relative h-full overflow-hidden rounded-[2rem]">
+                <Image src="/photos/mthobisi-coast.webp" alt="Mthobisi Nxumalo outdoors in Durban" fill sizes="(max-width: 1024px) 100vw, 38vw" className="object-cover object-[center_38%]" />
+              </div>
+            </figure>
+          </FadeIn>
+
+          <FadeIn from="right" delay={0.1}>
+            <div className="about-statement h-full">
+              <p className="eyebrow">Working philosophy</p>
+              <h2 className="mt-5 text-4xl sm:text-6xl">Built close to the real problem.</h2>
+              <p className="mt-8 font-serif text-2xl leading-relaxed tracking-tight text-ink sm:text-3xl">
                 {about.lead}
               </p>
               {about.body.map((para) => (
@@ -30,17 +34,14 @@ export default function About() {
                 </p>
               ))}
             </div>
-          </FadeIn>
-
-          <FadeIn from="right" delay={0.1}>
-            <div className="border-y border-border py-1">
+            <div className="mt-9 border-y border-border py-1">
               <dl className="divide-y divide-border">
                 {about.facts.map((fact) => (
                   <div
                     key={fact.k}
                     className="flex items-baseline justify-between gap-4 py-3.5 first:pt-0 last:pb-0"
                   >
-                    <dt className="font-mono text-[0.72rem] uppercase tracking-wider text-muted">
+                    <dt className="detail-label">
                       {fact.k}
                     </dt>
                     <dd className="text-right text-sm font-medium text-ink">
@@ -49,7 +50,7 @@ export default function About() {
                   </div>
                 ))}
               </dl>
-              <a href={site.cv} download className="btn btn-ghost mt-6 w-full">
+              <a href={site.cv} download className="text-link mt-6 inline-flex">
                 Download CV
               </a>
             </div>

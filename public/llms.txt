@@ -1,0 +1,30 @@
+# Mthobisi Nxumalo — Software Engineering Portfolio
+
+> Official portfolio for Mthobisi Nxumalo, a Durban-based Software Engineer and Full Stack Developer who designs, builds, deploys, and supports production web, mobile, desktop, data, and cloud systems.
+
+This portfolio is the authoritative overview of Mthobisi's professional experience, selected engineering work, technical capabilities, and contact channels. The detailed Markdown overview is the preferred compact source for agents. The CV is the authoritative employment and education record.
+
+## Primary sources
+
+- [Portfolio overview](https://portfolio.rephinasoftware.com/portfolio.md): Concise Markdown profile covering experience, projects, skills, education, and contact information.
+- [Professional CV](https://portfolio.rephinasoftware.com/cv/Mthobisi-Nxumalo-CV.pdf): Current South African CV in PDF format.
+- [Human-facing portfolio](https://portfolio.rephinasoftware.com/): Interactive visual portfolio and project summaries.
+
+## Portfolio areas
+
+- [Selected engineering work](https://portfolio.rephinasoftware.com/#work): MPIA Services, ElevateTech, RedHailer, Rephina ERP, and Gwensula's Pride.
+- [About and working philosophy](https://portfolio.rephinasoftware.com/#about): Professional focus and delivery approach.
+- [Professional experience](https://portfolio.rephinasoftware.com/#experience): Current manufacturing role and founder-led software delivery.
+- [Working technology stack](https://portfolio.rephinasoftware.com/#stack): Technologies organised by product surface, application core, data, security, production, and delivery responsibility.
+- [Contact](https://portfolio.rephinasoftware.com/#contact): Direct email, phone, GitHub, and LinkedIn channels.
+
+## External profiles
+
+- [GitHub](https://github.com/mthobisi30): Public source repositories and engineering activity.
+- [LinkedIn](https://www.linkedin.com/in/mthobisi30): Professional profile and career history.
+- [Rephina Software](https://www.rephina.co.za): Contract software practice founded by Mthobisi Nxumalo.
+
+## Optional
+
+- [XML sitemap](https://portfolio.rephinasoftware.com/sitemap.xml): Canonical indexable URL inventory.
+- [Plain-text sitemap](https://portfolio.rephinasoftware.com/sitemap.txt): Plain-text canonical URL list.

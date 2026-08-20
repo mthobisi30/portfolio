@@ -9,7 +9,6 @@ import {
   Phone,
 } from "./icons";
 import { FadeIn, PopCard, Stagger, StaggerItem } from "./motion";
-import SectionHeader from "./SectionHeader";
 
 // Direct contact, no generic form. Clear primary actions + the real channels.
 const channels = [
@@ -47,16 +46,13 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border-t border-border py-14 sm:py-28"
+      className="relative overflow-hidden section-space"
     >
       <div className="shell relative">
-        <div className="contact-sheet grid gap-12 border border-border p-7 sm:p-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:p-14">
+        <div className="contact-sheet liquid-glass grid gap-12 rounded-[2.75rem] p-7 sm:p-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:p-14">
           <div>
-            <SectionHeader
-              index="06"
-              eyebrow="Contact"
-              title="Let's talk about the work."
-            />
+            <p className="eyebrow">Contact</p>
+            <h2 className="mt-5 text-5xl sm:text-7xl">Let’s make something useful.</h2>
             <FadeIn>
               <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
                 If you are building a serious product, modernising an internal
@@ -68,7 +64,7 @@ export default function Contact() {
                 <MapPin size={16} className="text-accent-strong" />
                 {site.location}
                 <span className="mx-1 h-1 w-1 rounded-full bg-border-strong" />
-                Open to strong opportunities
+                Remote-friendly across South Africa
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -93,13 +89,13 @@ export default function Contact() {
                     <PopCard
                       href={c.href}
                       lift={-4}
-                      className="contact-channel group flex h-full items-center gap-4 border border-border p-5"
+                      className="contact-channel liquid-glass group flex h-full items-center gap-4 rounded-[1.25rem] p-5"
                     >
-                      <span className="grid h-10 w-10 shrink-0 place-items-center border border-border text-accent transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-white">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border text-accent transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-[#081005]">
                         <Icon size={18} />
                       </span>
                       <span className="min-w-0">
-                        <span className="block font-mono text-[0.7rem] uppercase tracking-wider text-muted">
+                        <span className="detail-label block">
                           {c.label}
                         </span>
                         <span className="mt-0.5 flex items-center gap-1 truncate text-sm font-medium text-ink">

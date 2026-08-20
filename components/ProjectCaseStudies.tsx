@@ -2,14 +2,13 @@ import { projects, type Project } from "@/lib/content";
 import { ArrowUpRight } from "./icons";
 import { FadeIn } from "./motion";
 import ProjectGallery from "./ProjectGallery";
-import ProjectLogo from "./ProjectLogo";
 import ProjectPreview from "./ProjectPreview";
 import SectionHeader from "./SectionHeader";
 
 function MetaRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="grid grid-cols-[5.5rem_1fr] gap-3 py-3 sm:grid-cols-[7rem_1fr]">
-      <dt className="font-mono text-[0.7rem] uppercase tracking-wider text-muted">
+      <dt className="detail-label">
         {label}
       </dt>
       <dd className="text-sm leading-relaxed text-ink">{children}</dd>
@@ -41,35 +40,18 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
   return (
     <article
       id={`case-${project.slug}`}
-      className="case-study card-pop scroll-mt-24 overflow-hidden p-6 sm:p-8 lg:p-10"
+      className="case-study scroll-mt-24 py-16 lg:py-24"
     >
       {/* Header */}
       <FadeIn>
-        <div className="flex flex-col gap-4 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="grid gap-5 border-b border-border pb-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-sm text-accent-strong">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="h-px w-8 bg-border-strong" />
-              <span className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
-                {project.tagline}
-              </span>
-            </div>
-            <div className="mt-3 flex items-center gap-3.5">
-              <ProjectLogo src={project.logo} name={project.name} size={46} />
-              <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                {project.name}
-              </h3>
-            </div>
+            <p className="project-kicker">{project.tagline}</p>
+            <h3 className="mt-3 text-4xl sm:text-5xl">{project.name}</h3>
           </div>
-          <div className="flex flex-wrap gap-1.5 sm:justify-end">
-            {project.roleBadges.map((b) => (
-              <span key={b} className="badge-accent badge">
-                {b}
-              </span>
-            ))}
-          </div>
+          <p className="max-w-sm text-sm leading-relaxed text-muted lg:text-right">
+            {project.role}
+          </p>
         </div>
       </FadeIn>
 
@@ -85,13 +67,9 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
                 <ProjectPreview slug={project.slug} />
               </div>
             )}
-            <div className="mt-4 flex flex-wrap items-center gap-1.5">
-              {project.platforms.map((p) => (
-                <span key={p} className="badge">
-                  {p}
-                </span>
-              ))}
-            </div>
+            <p className="mt-4 text-xs tracking-wide text-faint">
+              {project.platforms.join(" · ")}
+            </p>
             {project.link ? (
               <a
                 href={project.link.href}
@@ -111,13 +89,10 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
           <p className="text-base leading-relaxed text-ink">{project.summary}</p>
 
           <dl className="mt-6 divide-y divide-border border-y border-border">
-            <MetaRow label="Role">{project.role}</MetaRow>
             <MetaRow label="Problem">{project.problem}</MetaRow>
             {project.scale ? (
               <MetaRow label="Scale">
-                <span className="font-mono text-[0.82rem] text-accent">
-                  {project.scale}
-                </span>
+                <span className="text-sm text-warm">{project.scale}</span>
               </MetaRow>
             ) : null}
             <MetaRow label="Outcome">{project.outcome}</MetaRow>
@@ -125,35 +100,27 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
 
           {project.surfaces ? (
             <div className="mt-7">
-              <h4 className="font-mono text-[0.72rem] uppercase tracking-wider text-muted">
-                {`The ${project.surfaces.length} surfaces`}
-              </h4>
-              <ol className="mt-3 space-y-2">
-                {project.surfaces.map((s, i) => (
+              <h4 className="detail-label">Connected surfaces</h4>
+              <ul className="mt-3 space-y-2">
+                {project.surfaces.map((s) => (
                   <li key={s} className="flex gap-3 text-sm text-ink">
-                    <span className="font-mono text-xs text-accent-strong">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+                    <span className="mt-[0.5rem] h-1 w-1 shrink-0 rounded-full bg-accent" />
                     <span>{s}</span>
                   </li>
                 ))}
-              </ol>
+              </ul>
             </div>
           ) : null}
 
           <div className="mt-7">
-            <h4 className="font-mono text-[0.72rem] uppercase tracking-wider text-muted">
-              Key features
-            </h4>
+            <h4 className="detail-label">Key features</h4>
             <div className="mt-3">
               <FeatureList items={project.features} />
             </div>
           </div>
 
           <div className="mt-7">
-            <h4 className="font-mono text-[0.72rem] uppercase tracking-wider text-muted">
-              Architecture
-            </h4>
+            <h4 className="detail-label">Architecture</h4>
             <ul className="mt-3 space-y-2">
               {project.architecture.map((a) => (
                 <li key={a} className="flex gap-2.5 text-sm text-ink">
@@ -168,16 +135,8 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
           </div>
 
           <div className="mt-7">
-            <h4 className="font-mono text-[0.72rem] uppercase tracking-wider text-muted">
-              Stack
-            </h4>
-            <div className="mt-3 flex flex-wrap gap-1.5">
-              {project.stack.map((s) => (
-                <span key={s} className="tag">
-                  {s}
-                </span>
-              ))}
-            </div>
+            <h4 className="detail-label">Stack</h4>
+            <p className="mt-3 text-sm leading-7 text-muted">{project.stack.join(" · ")}</p>
           </div>
         </FadeIn>
       </div>
@@ -189,17 +148,16 @@ export default function ProjectCaseStudies() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden border-t border-border py-14 sm:py-28"
+      className="relative overflow-hidden section-space"
     >
       <div className="shell">
         <SectionHeader
-          index="02"
           eyebrow="System dossiers"
           title="The decisions behind the screens."
           intro="Problems, architecture, shipped surfaces, and operational outcomes—starting with the systems that carry the most complexity."
         />
 
-        <div className="mt-12 space-y-6 lg:space-y-8">
+        <div className="mt-10 divide-y divide-border">
           {projects.map((project, i) => (
             <CaseStudy key={project.slug} project={project} index={i} />
           ))}

@@ -3,7 +3,8 @@
 import { useEffect } from "react";
 
 /**
- * Gives every `.btn-primary` a subtle pull toward the cursor on hover.
+ * Adds a subtle magnetic pull to primary actions and tracks the pointer
+ * inside liquid-glass surfaces for a quiet local highlight.
  * Mouse-only (skips touch/coarse pointers) and disabled under reduced motion.
  * Renders nothing — it just wires listeners on mount.
  */
@@ -16,6 +17,9 @@ export default function MagneticButtons() {
     const STRENGTH = 0.18; // fraction of cursor offset — kept low to stay subtle
     const buttons = Array.from(
       document.querySelectorAll<HTMLElement>(".btn-primary")
+    );
+    const glass = Array.from(
+      document.querySelectorAll<HTMLElement>(".liquid-glass")
     );
 
     const cleanups = buttons.map((btn) => {
@@ -37,7 +41,20 @@ export default function MagneticButtons() {
       };
     });
 
-    return () => cleanups.forEach((fn) => fn());
+    const glassCleanups = glass.map((panel) => {
+      const onMove = (event: MouseEvent) => {
+        const bounds = panel.getBoundingClientRect();
+        panel.style.setProperty("--pointer-x", `${event.clientX - bounds.left}px`);
+        panel.style.setProperty("--pointer-y", `${event.clientY - bounds.top}px`);
+      };
+      panel.addEventListener("mousemove", onMove);
+      return () => panel.removeEventListener("mousemove", onMove);
+    });
+
+    return () => {
+      cleanups.forEach((fn) => fn());
+      glassCleanups.forEach((fn) => fn());
+    };
   }, []);
 
   return null;

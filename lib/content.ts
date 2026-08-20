@@ -22,18 +22,18 @@ export const site = {
 
 export const nav = [
   { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Tech Stack", href: "#stack" },
-  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const hero = {
   headline: "I build the system behind the interface.",
   support:
-    "Production software across web, mobile, and desktop — from the first schema and API contract to the interface, deployment, and support.",
+    "Software Engineer and Full Stack Developer experienced in designing, building and operating production web, mobile and desktop systems across manufacturing, industrial inspection, e-commerce and financial services.",
   detail:
-    "Full Stack Developer based in Durban, South Africa. Open to thoughtful teams and ambitious product work.",
+    "Own the full SDLC from requirements and architecture through database design, development, CI/CD, deployment and production support.",
 };
 
 export type Project = {
@@ -62,14 +62,14 @@ export const projects: Project[] = [
     slug: "mpia",
     name: "MPIA Services",
     tagline: "Industrial NDT Inspection Platform",
-    logo: "/logos/mpia.jpeg",
+    logo: "/logos/mpia.webp",
     images: [
-      { src: "/projects/mpia-admin.png", alt: "MPIA admin console dashboard — jobs, clients, equipment, and inspection archives", label: "Admin Console" },
-      { src: "/projects/mpia-client.png", alt: "MPIA client portal NDT dashboard with project archives and recent reports", label: "Client Portal" },
-      { src: "/projects/mpia-mobile-2.png", alt: "MPIA field mobile app dashboard — availability status and active job", label: "Field Mobile" },
-      { src: "/projects/mpia-admin-1.png", alt: "MPIA admin console login screen", label: "Admin Login" },
-      { src: "/projects/mpia-client-1.png", alt: "MPIA client portal login screen", label: "Client Login" },
-      { src: "/projects/mpia-mobile-1.png", alt: "MPIA field data-capture mobile login screen", label: "Field Login" },
+      { src: "/projects/mpia-admin.webp", alt: "MPIA admin console dashboard — jobs, clients, equipment, and inspection archives", label: "Admin Console" },
+      { src: "/projects/mpia-client.webp", alt: "MPIA client portal NDT dashboard with project archives and recent reports", label: "Client Portal" },
+      { src: "/projects/mpia-mobile-2.webp", alt: "MPIA field mobile app dashboard — availability status and active job", label: "Field Mobile" },
+      { src: "/projects/mpia-admin-1.webp", alt: "MPIA admin console login screen", label: "Admin Login" },
+      { src: "/projects/mpia-client-1.webp", alt: "MPIA client portal login screen", label: "Client Login" },
+      { src: "/projects/mpia-mobile-1.webp", alt: "MPIA field data-capture mobile login screen", label: "Field Login" },
     ],
     role: "Software Developer · Contract via Rephina Software",
     roleBadges: ["Full Stack Developer", "Full SDLC", "Production System"],
@@ -124,13 +124,13 @@ export const projects: Project[] = [
     slug: "elevatetech",
     name: "ElevateTech",
     tagline: "Manufacturing PIM, Supplier Portal & Commerce Platform",
-    logo: "/logos/elevatetech.png",
+    logo: "/logos/elevatetech.webp",
     images: [
-      { src: "/projects/pim-1.png", alt: "ElevateTech PIM admin dashboard — parts, inventory, and sync overview", label: "PIM" },
-      { src: "/projects/suppliers-1.png", alt: "ElevateTech supplier portal dashboard — RFQs, quotes, and orders", label: "Supplier Portal" },
-      { src: "/projects/online-store.png", alt: "ElevateTech online store product catalogue of elevator parts", label: "Online Store" },
-      { src: "/projects/pim-2.png", alt: "ElevateTech PIM admin login screen", label: "PIM Login" },
-      { src: "/projects/suppliers-2.png", alt: "ElevateTech supplier portal sign-in screen", label: "Supplier Sign-in" },
+      { src: "/projects/pim-1.webp", alt: "ElevateTech PIM admin dashboard — parts, inventory, and sync overview", label: "PIM" },
+      { src: "/projects/suppliers-1.webp", alt: "ElevateTech supplier portal dashboard — RFQs, quotes, and orders", label: "Supplier Portal" },
+      { src: "/projects/online-store.webp", alt: "ElevateTech online store product catalogue of elevator parts", label: "Online Store" },
+      { src: "/projects/pim-2.webp", alt: "ElevateTech PIM admin login screen", label: "PIM Login" },
+      { src: "/projects/suppliers-2.webp", alt: "ElevateTech supplier portal sign-in screen", label: "Supplier Sign-in" },
     ],
     role: "Full Stack Developer · full SDLC ownership",
     roleBadges: ["Full Stack Developer", "Full SDLC", "Production System"],
@@ -181,10 +181,10 @@ export const projects: Project[] = [
     slug: "redhailer",
     name: "RedHailer",
     tagline: "Service & Product Marketplace Platform",
-    logo: "/logos/redhailer.png",
+    logo: "/logos/redhailer.webp",
     images: [
-      { src: "/projects/redhailer-2.png", alt: "RedHailer discover-services marketplace screen with featured listings", label: "Marketplace" },
-      { src: "/projects/redhailer-1.png", alt: "RedHailer sign-in screen", label: "Sign In" },
+      { src: "/projects/redhailer-2.webp", alt: "RedHailer discover-services marketplace screen with featured listings", label: "Marketplace" },
+      { src: "/projects/redhailer-1.webp", alt: "RedHailer sign-in screen", label: "Sign In" },
     ],
     role: "Software Developer · Contract via Rephina Software, for Qwezy Digitals",
     roleBadges: ["Contractor Work", "Agency Project", "Production System"],
@@ -228,9 +228,9 @@ export const projects: Project[] = [
     slug: "rephina-erp",
     name: "Rephina ERP",
     tagline: "Internal Business Operations Platform",
-    logo: "/logos/rephina-erp.png",
+    logo: "/logos/rephina-erp.webp",
     images: [
-      { src: "/projects/erp-1.png", alt: "Rephina ERP dashboard — projects, tasks, and finance overview", label: "Dashboard" },
+      { src: "/projects/erp-1.webp", alt: "Rephina ERP dashboard — projects, tasks, and finance overview", label: "Dashboard" },
     ],
     role: "Founder / Full Stack Developer",
     roleBadges: ["Full Stack Developer", "Full SDLC", "Product"],
@@ -276,7 +276,7 @@ export const projects: Project[] = [
     name: "Gwensula's Pride",
     tagline: "Business Website",
     images: [
-      { src: "/projects/gwensulas-pride-1.png", alt: "Gwensula's Pride construction company website homepage", label: "Homepage" },
+      { src: "/projects/gwensulas-pride-1.webp", alt: "Gwensula's Pride construction company website homepage", label: "Homepage" },
     ],
     role: "Software Developer · Rephina Software",
     roleBadges: ["Client Work"],
@@ -506,7 +506,7 @@ export const about = {
     { k: "Role", v: "Full Stack Developer" },
     { k: "Focus", v: "Production Business Systems" },
     { k: "Delivery", v: "Web · Mobile · Desktop" },
-    { k: "Availability", v: "Open to strong opportunities" },
+    { k: "Engagement", v: "Permanent · Contract" },
   ],
 };
 

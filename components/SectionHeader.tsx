@@ -1,24 +1,21 @@
 import Reveal from "./Reveal";
 
 type SectionHeaderProps = {
-  index: string;
+  index?: string;
   eyebrow: string;
   title: string;
   intro?: string;
 };
 
 export default function SectionHeader({
-  index,
   eyebrow,
   title,
   intro,
 }: SectionHeaderProps) {
   return (
-    <Reveal className="max-w-2xl">
-      <span className="eyebrow">
-        {index} — {eyebrow}
-      </span>
-      <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+    <Reveal className="section-heading max-w-3xl">
+      <span className="eyebrow">{eyebrow}</span>
+      <h2 className="mt-5 text-4xl sm:text-5xl lg:text-6xl">
         {title}
       </h2>
       {intro ? (

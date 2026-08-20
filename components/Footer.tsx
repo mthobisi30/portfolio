@@ -6,14 +6,7 @@ export default function Footer() {
       <div className="shell py-12">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-lg border border-border-strong bg-surface font-mono text-sm font-semibold text-accent">
-                {site.initials}
-              </span>
-              <span className="text-sm font-medium tracking-tight">
-                {site.name}
-              </span>
-            </div>
+            <p className="font-serif text-2xl font-semibold tracking-tight text-ink">{site.name}</p>
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Software Engineer and Full Stack Developer building production
               systems across web, mobile, desktop, data, and infrastructure.
@@ -74,8 +67,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.name}. Built with Next.js &
-            TypeScript.
+            © {new Date().getFullYear()} {site.name}.
           </p>
           <p className="font-mono">Durban · KwaZulu-Natal · South Africa</p>
         </div>

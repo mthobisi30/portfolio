@@ -2,6 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // This is a single-page Tailwind portfolio: inlining its compact stylesheet
+  // removes the render-blocking CSS request on a visitor's first load.
+  experimental: {
+    inlineCss: true,
+  },
   // Cloudflare Pages serves this portfolio as a static site from `out/`.
   output: "export",
   images: {

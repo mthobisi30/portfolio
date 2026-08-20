@@ -49,7 +49,7 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled
-          ? "border-b border-border bg-bg/85 backdrop-blur-md"
+          ? "header-scrolled"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -60,19 +60,10 @@ export default function Header() {
       >
         <a
           href="#top"
-          className="group inline-flex items-center gap-2.5"
+          className="group inline-flex items-center"
           aria-label={`${site.name} — home`}
         >
-          <span
-            className={`grid place-items-center border border-border-strong bg-ink font-mono font-semibold tracking-tight text-bg transition-all duration-300 ${
-              scrolled ? "h-8 w-8 text-xs" : "h-9 w-9 text-sm"
-            }`}
-          >
-            {site.initials}
-          </span>
-          <span className="hidden text-sm font-medium tracking-tight sm:block">
-            {site.name}
-          </span>
+          <span className="text-sm font-medium tracking-tight text-ink transition-colors group-hover:text-accent-strong">{site.name}</span>
         </a>
 
         <nav
@@ -91,13 +82,7 @@ export default function Header() {
                 <span className={isActive ? "text-ink" : undefined}>
                   {item.label}
                 </span>
-                <span
-                  className={`absolute inset-x-3 -bottom-px h-px origin-left bg-accent transition-transform duration-300 ${
-                    isActive
-                      ? "scale-x-100"
-                      : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
+                {isActive ? <span className="absolute inset-x-3 -bottom-px h-px bg-accent" /> : null}
               </a>
             );
           })}
@@ -115,7 +100,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center border border-border-strong bg-surface text-ink md:hidden"
+            className="liquid-glass grid h-10 w-10 place-items-center rounded-full text-ink md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -130,7 +115,7 @@ export default function Header() {
         id="mobile-menu"
         className={`md:hidden ${open ? "block" : "hidden"}`}
       >
-        <div className="shell border-t border-border bg-bg pb-6 pt-2">
+        <div className="shell border-t border-border bg-bg/95 pb-6 pt-2 backdrop-blur-xl">
           <nav className="flex flex-col" aria-label="Mobile">
             {nav.map((item) => (
               <a
