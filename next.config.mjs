@@ -2,6 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // Cloudflare Pages serves this portfolio as a static site from `out/`.
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
   // This dev machine's inotify watch pool is often saturated by other tools.
   // When WATCHPACK_POLLING=true is set, Watchpack polls instead of using
   // inotify; here we narrow what gets polled so it stays cheap.
