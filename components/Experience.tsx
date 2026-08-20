@@ -1,5 +1,5 @@
 import { experience } from "@/lib/content";
-import { PopCard, Stagger, StaggerItem } from "./motion";
+import { Stagger, StaggerItem } from "./motion";
 import SectionHeader from "./SectionHeader";
 
 export default function Experience() {
@@ -9,73 +9,55 @@ export default function Experience() {
         <SectionHeader
           index="03"
           eyebrow="Experience"
-          title="Where the work has happened."
-          intro="Current focus is full ownership of a manufacturer's software, alongside contracted and founder-led projects through Rephina Software."
+          title="Responsibility has grown with every role."
+          intro="Today I own a manufacturer's application estate while continuing selected founder-led work through Rephina Software."
         />
 
-        <Stagger gap={0.08} className="mt-12 space-y-5">
-          {experience.map((job) => (
-            <StaggerItem
-              key={job.company}
-              className="grid gap-3 lg:grid-cols-[180px_1fr] lg:gap-8"
-            >
-              {/* Left meta column */}
-              <div className="flex items-center gap-3 lg:flex-col lg:items-start lg:pt-2">
-                <span className="font-mono text-xs text-muted">
-                  {job.period}
+        <Stagger gap={0.07} className="mt-12 border-t border-border">
+          {experience.map((job, index) => (
+            <StaggerItem key={`${job.company}-${job.role}`}>
+              <article className="experience-record grid gap-5 border-b border-border py-8 lg:grid-cols-[3.5rem_13rem_1fr] lg:gap-8">
+                <span className="font-mono text-xs text-accent">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-                {job.current ? (
-                  <span className="badge-accent badge inline-flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                    Current
-                  </span>
-                ) : null}
-              </div>
 
-              {/* Right popout card */}
-              <PopCard
-                lift={-4}
-                className="card-pop card-pop-hover p-6 sm:p-7"
-              >
-                <div
-                  style={
-                    job.current
-                      ? {
-                          borderLeftColor: "var(--color-accent)",
-                          borderLeftWidth: "3px",
-                          paddingLeft: "1rem",
-                          marginLeft: "-0.25rem",
-                        }
-                      : undefined
-                  }
-                >
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                    <h3 className="text-lg font-semibold tracking-tight">
+                <div>
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">
+                    {job.period}
+                  </p>
+                  {job.current ? (
+                    <span className="mt-3 inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-accent">
+                      <span className="h-1.5 w-1.5 bg-accent" />
+                      Current
+                    </span>
+                  ) : null}
+                </div>
+
+                <div className="grid gap-5 xl:grid-cols-[15rem_1fr] xl:gap-10">
+                  <header>
+                    <h3 className="text-xl font-bold tracking-tight">
                       {job.company}
                     </h3>
-                  </div>
-                  <p className="mt-0.5 text-sm font-medium text-accent-strong">
-                    {job.role}
+                    <p className="mt-1 text-sm font-medium text-accent">
+                      {job.role}
+                    </p>
                     {job.location ? (
-                      <span className="text-muted"> · {job.location}</span>
+                      <p className="mt-2 text-xs text-muted">{job.location}</p>
                     ) : null}
-                  </p>
-                  <ul className="mt-3.5 grid gap-2 sm:grid-cols-2 sm:gap-x-6">
-                    {job.points.map((p) => (
+                  </header>
+                  <ul className="grid gap-3 sm:grid-cols-2 sm:gap-x-8">
+                    {job.points.map((point) => (
                       <li
-                        key={p}
-                        className="flex gap-2.5 text-sm leading-relaxed text-muted"
+                        key={point}
+                        className="flex gap-3 text-sm leading-relaxed text-muted"
                       >
-                        <span
-                          aria-hidden
-                          className="mt-[0.5rem] h-1 w-1 shrink-0 rounded-full bg-border-strong"
-                        />
-                        <span>{p}</span>
+                        <span className="mt-[0.48rem] h-px w-3 shrink-0 bg-accent" />
+                        <span>{point}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-              </PopCard>
+              </article>
             </StaggerItem>
           ))}
         </Stagger>

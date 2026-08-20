@@ -1,6 +1,5 @@
 import { about, site } from "@/lib/content";
 import { FadeIn } from "./motion";
-import RobotBackdrop from "./RobotBackdrop";
 import SectionHeader from "./SectionHeader";
 
 export default function About() {
@@ -9,14 +8,17 @@ export default function About() {
       id="about"
       className="relative overflow-hidden border-t border-border py-14 sm:py-28"
     >
-      <RobotBackdrop src="/robot-2.jpeg" side="left" />
       <div className="shell relative">
-        <SectionHeader index="05" eyebrow="About" title="About Mthobisi." />
+        <SectionHeader
+          index="05"
+          eyebrow="Working philosophy"
+          title="Built close to the real problem."
+        />
 
         <div className="mt-12 grid items-start gap-6 lg:grid-cols-[1.5fr_1fr] lg:gap-8">
           <FadeIn from="left">
-            <div className="card-pop h-full p-7 sm:p-9">
-              <p className="text-xl font-medium leading-relaxed tracking-tight text-ink">
+            <div className="about-statement h-full border-l-4 border-accent py-2 pl-6 sm:pl-9">
+              <p className="font-serif text-2xl leading-relaxed tracking-tight text-ink sm:text-3xl">
                 {about.lead}
               </p>
               {about.body.map((para) => (
@@ -31,7 +33,7 @@ export default function About() {
           </FadeIn>
 
           <FadeIn from="right" delay={0.1}>
-            <div className="card-pop p-6 sm:p-7">
+            <div className="border-y border-border py-1">
               <dl className="divide-y divide-border">
                 {about.facts.map((fact) => (
                   <div

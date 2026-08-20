@@ -9,7 +9,6 @@ import {
   Phone,
 } from "./icons";
 import { FadeIn, PopCard, Stagger, StaggerItem } from "./motion";
-import RobotBackdrop from "./RobotBackdrop";
 import SectionHeader from "./SectionHeader";
 
 // Direct contact, no generic form. Clear primary actions + the real channels.
@@ -50,9 +49,8 @@ export default function Contact() {
       id="contact"
       className="relative overflow-hidden border-t border-border py-14 sm:py-28"
     >
-      <RobotBackdrop src="/robot.jpg" side="right" />
       <div className="shell relative">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+        <div className="contact-sheet grid gap-12 border border-border p-7 sm:p-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:p-14">
           <div>
             <SectionHeader
               index="06"
@@ -61,16 +59,16 @@ export default function Contact() {
             />
             <FadeIn>
               <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
-                Open to all opportunities — full-time roles, freelance, and
-                contract software projects. The fastest way to reach me is
-                email; I reply to specifics.
+                If you are building a serious product, modernising an internal
+                workflow, or hiring an engineer who can own more than one layer,
+                tell me what needs to work and who it needs to work for.
               </p>
 
               <div className="mt-6 flex items-center gap-2 text-sm text-muted">
                 <MapPin size={16} className="text-accent-strong" />
                 {site.location}
                 <span className="mx-1 h-1 w-1 rounded-full bg-border-strong" />
-                Open to opportunities
+                Open to strong opportunities
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -95,9 +93,9 @@ export default function Contact() {
                     <PopCard
                       href={c.href}
                       lift={-4}
-                      className="card-pop card-pop-hover group flex h-full items-center gap-4 p-5"
+                      className="contact-channel group flex h-full items-center gap-4 border border-border p-5"
                     >
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-border bg-raise/60 text-accent transition-colors group-hover:border-accent/40 group-hover:text-accent-strong">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center border border-border text-accent transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-white">
                         <Icon size={18} />
                       </span>
                       <span className="min-w-0">

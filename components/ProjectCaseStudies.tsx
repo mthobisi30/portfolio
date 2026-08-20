@@ -41,7 +41,7 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
   return (
     <article
       id={`case-${project.slug}`}
-      className="card-pop scroll-mt-24 overflow-hidden p-6 sm:p-8 lg:p-10"
+      className="case-study card-pop scroll-mt-24 overflow-hidden p-6 sm:p-8 lg:p-10"
     >
       {/* Header */}
       <FadeIn>
@@ -194,9 +194,9 @@ export default function ProjectCaseStudies() {
       <div className="shell">
         <SectionHeader
           index="02"
-          eyebrow="Case Studies"
-          title="The work in detail."
-          intro="What each system does, the problem it solved, how it's built, and what shipped. Starting with the most complex."
+          eyebrow="System dossiers"
+          title="The decisions behind the screens."
+          intro="Problems, architecture, shipped surfaces, and operational outcomes—starting with the systems that carry the most complexity."
         />
 
         <div className="mt-12 space-y-6 lg:space-y-8">

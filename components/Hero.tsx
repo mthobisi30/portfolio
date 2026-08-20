@@ -1,57 +1,80 @@
-import Image from "next/image";
 import { hero, site } from "@/lib/content";
 import { ArrowDown, Github, Linkedin, Mail } from "./icons";
+import InteractivePortrait from "./InteractivePortrait";
 import { FadeIn } from "./motion";
+
+const buildSteps = [
+  "Requirements",
+  "Architecture",
+  "Data",
+  "API",
+  "Interface",
+  "Security",
+  "Deploy",
+  "Support",
+];
 
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden pt-16 pb-16 sm:pt-24 sm:pb-28"
-    >
+    <section id="top" className="hero-section relative overflow-hidden pb-16 pt-28 sm:pb-24 sm:pt-36">
       <div className="shell relative">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-          {/* Left — identity */}
-          <div className="max-w-2xl">
-            <FadeIn immediate>
-              <span className="status-pill">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                Available for work
-              </span>
-            </FadeIn>
+        <FadeIn immediate>
+          <div className="hero-command mb-10 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
+            <span>
+              <span className="text-accent">~/portfolio</span> $ whoami
+            </span>
+            <span>Durban · South Africa</span>
+            <span className="inline-flex items-center gap-2 text-ink">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_var(--color-accent)]" />
+              Open to strong opportunities
+            </span>
+          </div>
+        </FadeIn>
 
-            <FadeIn immediate delay={0.08}>
-              <h1 className="mt-6 text-[2.4rem] font-bold leading-[1.03] tracking-tight sm:text-6xl lg:text-[4.6rem]">
-                Mthobisi
-                <br />
-                <span className="text-gradient">Nxumalo</span>
-              </h1>
+        <div className="grid items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+          <FadeIn immediate from="left" delay={0.08} className="order-2 lg:order-1">
+            <InteractivePortrait />
+          </FadeIn>
+
+          <div className="order-1 lg:order-2">
+            <FadeIn immediate delay={0.1}>
+              <p className="font-mono text-sm font-medium text-accent">
+                Hello — I&apos;m
+              </p>
             </FadeIn>
 
             <FadeIn immediate delay={0.16}>
-              <p className="mt-5 font-mono text-base font-medium text-accent sm:text-lg">
-                {site.role}
-                <span className="ml-0.5 inline-block text-accent">_</span>
+              <h1 className="reference-name mt-3 text-[3.25rem] font-bold leading-[0.92] tracking-[-0.055em] sm:text-7xl lg:text-[5.7rem]">
+                Mthobisi
+                <br />
+                <span>Nxumalo</span>
+              </h1>
+            </FadeIn>
+
+            <FadeIn immediate delay={0.22}>
+              <p className="mt-5 text-xl font-semibold text-ink sm:text-2xl">
+                Software Engineer · Full Stack Developer
+              </p>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
+                {hero.support} I specialise in connected business systems where
+                interfaces, APIs, databases, permissions, and infrastructure
+                must work as one product.
+              </p>
+              <p className="mt-5 font-serif text-lg italic text-faint">
+                Useful software. Clear architecture. Ownership after launch.
               </p>
             </FadeIn>
 
-            <FadeIn immediate delay={0.24}>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-                {hero.support}
-              </p>
-            </FadeIn>
-
-            <FadeIn immediate delay={0.32}>
-              <div className="mt-9 flex flex-wrap items-center gap-3">
-                <a href={site.cv} download className="btn btn-primary">
-                  Download CV
-                </a>
-                <a href="#work" className="btn btn-ghost">
-                  View Projects
+            <FadeIn immediate delay={0.28}>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a href="#work" className="btn btn-primary">
+                  Explore projects
                   <ArrowDown size={15} />
                 </a>
-                <span className="mx-1 hidden h-6 w-px bg-border sm:block" />
-                <div className="flex items-center gap-1">
+                <a href={site.cv} download className="btn btn-ghost">
+                  Download CV
+                </a>
+                <div className="social-dock flex items-center">
                   {[
                     { href: site.github, label: "GitHub", Icon: Github },
                     { href: site.linkedin, label: "LinkedIn", Icon: Linkedin },
@@ -62,8 +85,8 @@ export default function Hero() {
                       href={href}
                       target={label === "Email" ? undefined : "_blank"}
                       rel="noreferrer noopener"
-                      aria-label={`${label}`}
-                      className="grid h-10 w-10 place-items-center rounded-lg border border-border bg-raise/40 text-muted backdrop-blur transition-colors hover:border-accent hover:text-accent"
+                      aria-label={label}
+                      className="social-link grid h-11 w-11 place-items-center border-y border-r border-border text-muted transition-colors first:border-l hover:bg-surface-alt hover:text-accent"
                     >
                       <Icon size={17} />
                     </a>
@@ -72,48 +95,36 @@ export default function Hero() {
               </div>
             </FadeIn>
           </div>
+        </div>
 
-          {/* Right — robot in a liquid-glass showcase */}
-          <FadeIn immediate from="right" delay={0.2}>
-            <div className="relative ml-auto w-full max-w-md">
-              <div
-                aria-hidden
-                className="absolute -inset-8 rounded-[2rem] opacity-80 blur-3xl"
-                style={{
-                  background:
-                    "radial-gradient(55% 55% at 60% 35%, rgba(61,123,255,0.4), transparent 70%)",
-                }}
-              />
-              <div className="glow-ring glass relative w-full overflow-hidden rounded-[1.6rem] p-2.5">
-                <div className="relative aspect-square w-full overflow-hidden rounded-[1.2rem]">
-                  <Image
-                    src="/mthobisi.jpeg"
-                    alt="Mthobisi Nxumalo — Full Stack Developer"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 90vw, 40vw"
-                    className="object-cover object-[center_25%]"
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute inset-0"
-                    style={{
-                      background:
-                        "linear-gradient(160deg, transparent 40%, rgba(4,6,15,0.55))",
-                    }}
-                  />
-                </div>
+        <FadeIn immediate delay={0.34}>
+          <div className="capability-register mt-16 grid overflow-hidden rounded-2xl border border-border bg-surface/70 sm:grid-cols-3">
+            {[
+              ["01 / Product surfaces", "Next.js · React · Flutter · Tauri"],
+              ["02 / Application core", "Node.js · PostgreSQL · APIs · RBAC"],
+              ["03 / Production", "Docker · Coolify · CI/CD · Support"],
+            ].map(([label, value]) => (
+              <div key={label} className="p-5 sm:border-l sm:p-6 first:sm:border-l-0">
+                <p className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-accent">{label}</p>
+                <p className="mt-2 text-sm font-medium text-ink">{value}</p>
               </div>
+            ))}
+          </div>
+        </FadeIn>
 
-              {/* floating glass chip */}
-              <div className="glass absolute -bottom-4 -left-4 flex items-center gap-2 rounded-xl px-3.5 py-2.5">
-                <span className="h-2 w-2 rounded-full bg-accent" />
-                <span className="font-mono text-[0.7rem] uppercase tracking-wider text-ink">
-                  Durban · South Africa
-                </span>
+        <div className="build-loop marquee-mask mt-7 overflow-hidden">
+          <div className="marquee-track gap-8 font-mono text-[0.64rem] uppercase tracking-[0.14em] text-faint">
+            {[0, 1].map((copy) => (
+              <div key={copy} aria-hidden={copy === 1} className="flex gap-8 pr-8">
+                {buildSteps.map((step, index) => (
+                  <span key={step} className="flex items-center gap-8 whitespace-nowrap">
+                    <span>{step}</span>
+                    <span className="text-accent">{String(index + 1).padStart(2, "0")}</span>
+                  </span>
+                ))}
               </div>
-            </div>
-          </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>

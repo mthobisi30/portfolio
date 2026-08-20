@@ -1,23 +1,7 @@
 import { techStack } from "@/lib/content";
-import { PopCard, Stagger, StaggerItem } from "./motion";
+import { Stagger, StaggerItem } from "./motion";
 import SectionHeader from "./SectionHeader";
 import { TechIcon } from "./techIcons";
-
-// Asymmetric bento of liquid-glass cards.
-const spans: Record<string, string> = {
-  Frontend: "md:col-span-3",
-  Backend: "md:col-span-3",
-  Mobile: "md:col-span-2",
-  Databases: "md:col-span-2",
-  Security: "md:col-span-2",
-  "DevOps & Cloud": "md:col-span-3",
-  "Automation & AI": "md:col-span-3",
-  "Testing & QA": "md:col-span-2",
-  Practices: "md:col-span-4",
-};
-
-const tagClass =
-  "tag inline-flex items-center gap-1.5 transition-colors duration-200 hover:border-accent/50 hover:text-ink";
 
 export default function TechStack() {
   return (
@@ -25,33 +9,30 @@ export default function TechStack() {
       <div className="shell">
         <SectionHeader
           index="04"
-          eyebrow="Tech Stack"
-          title="Tools I actually use."
-          intro="Organised by layer rather than listed in a cloud. These are the technologies behind the projects above — not an aspirational wishlist."
+          eyebrow="Working stack"
+          title="Tools organised by responsibility."
+          intro="The stack only matters in context. These are the technologies I use to shape interfaces, application logic, data, security, delivery, and support."
         />
 
         <Stagger
-          gap={0.05}
-          className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-6"
+          gap={0.045}
+          className="stack-register mt-12 border-t border-border"
         >
-          {techStack.map((group) => (
-            <StaggerItem
-              key={group.group}
-              className={`h-full ${spans[group.group] ?? "md:col-span-2"}`}
-            >
-              <PopCard
-                lift={-4}
-                className="card-pop card-pop-hover flex h-full flex-col p-6"
-              >
-                <div className="flex items-center gap-2.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  <h3 className="text-base font-bold tracking-tight">
-                    {group.group}
-                  </h3>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
+          {techStack.map((group, index) => (
+            <StaggerItem key={group.group}>
+              <div className="grid gap-4 border-b border-border py-6 sm:grid-cols-[3rem_12rem_1fr] sm:items-start">
+                <span className="font-mono text-xs text-accent">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-lg font-bold tracking-tight">
+                  {group.group}
+                </h3>
+                <div className="flex flex-wrap gap-x-5 gap-y-3">
                   {group.items.map((item) => (
-                    <span key={item} className={tagClass}>
+                    <span
+                      key={item}
+                      className="inline-flex items-center gap-2 text-sm text-muted"
+                    >
                       <TechIcon
                         name={item}
                         size={14}
@@ -61,7 +42,7 @@ export default function TechStack() {
                     </span>
                   ))}
                 </div>
-              </PopCard>
+              </div>
             </StaggerItem>
           ))}
         </Stagger>

@@ -64,7 +64,7 @@ export default function Header() {
           aria-label={`${site.name} — home`}
         >
           <span
-            className={`grid place-items-center rounded-lg border border-border-strong bg-surface font-mono font-semibold tracking-tight text-accent transition-all duration-300 ${
+            className={`grid place-items-center border border-border-strong bg-ink font-mono font-semibold tracking-tight text-bg transition-all duration-300 ${
               scrolled ? "h-8 w-8 text-xs" : "h-9 w-9 text-sm"
             }`}
           >
@@ -115,7 +115,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-lg border border-border-strong bg-surface text-ink md:hidden"
+            className="grid h-10 w-10 place-items-center border border-border-strong bg-surface text-ink md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -130,7 +130,7 @@ export default function Header() {
         id="mobile-menu"
         className={`md:hidden ${open ? "block" : "hidden"}`}
       >
-        <div className="shell border-t border-border bg-bg/95 pb-6 pt-2 backdrop-blur-md">
+        <div className="shell border-t border-border bg-bg pb-6 pt-2">
           <nav className="flex flex-col" aria-label="Mobile">
             {nav.map((item) => (
               <a

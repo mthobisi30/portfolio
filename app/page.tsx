@@ -1,11 +1,10 @@
 import About from "@/components/About";
-import BottomNav from "@/components/BottomNav";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
+import FieldNotes from "@/components/FieldNotes";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import LeftRail from "@/components/LeftRail";
-import MagneticButtons from "@/components/MagneticButtons";
 import ProjectCaseStudies from "@/components/ProjectCaseStudies";
 import RephinaGateway from "@/components/RephinaGateway";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -17,12 +16,13 @@ export default function Home() {
   return (
     <>
       <ScrollProgress />
-      <LeftRail />
+      <Header />
       <main>
         <Hero />
         <SelectedWork />
         <ProjectCaseStudies />
         <Experience />
+        <FieldNotes />
         <Strengths />
         <TechStack />
         <About />
@@ -30,8 +30,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <BottomNav />
-      <MagneticButtons />
     </>
   );
 }
